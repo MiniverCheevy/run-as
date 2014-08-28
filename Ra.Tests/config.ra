@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RaConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Users>
-    <UserAccount Key="me" UserName="shawn.doucet@azuresoft.net"/>
-    <UserAccount Key="hound" UserName="shawn.doucet@sparkhound.com"/>
-    <UserAccount Key="doe" UserName="sdoucet@DOE.LA.GOV"/>
-    <UserAccount Key="ghs" UserName="douces@ghsbtr.net"/>
-    <UserAccount Key="ldr" UserName="NTDORT\douces"/>
-    <UserAccount Key="pn" UserName="bpdhecc\sdoucet"/>
-    <UserAccount Key="pnsql" UserName="BPSQL01\sdoucet"/>
-    <UserAccount Key="bsi" UserName="bsi\shawnd"/>
-    <UserAccount Key="turner" UserName="TURNER-NT\c-sdoucet"/>
-    <UserAccount Key="forest" UserName="TURNER-NT\fmarie"/>
-
-
+    <UserAccount Key="me" UserName="some.guy@somewhere.com"/>
+    <UserAccount Key="work" UserName="SomeDomain\SomeGuy"/>
+    <UserAccount Key="otherWork" UserName="EI-EIO\sguy"/>
   </Users>
   <Apps>
     <Application Key="cm" FullPath="C:\windows\system32\compmgmt.msc" Arguments="/s" RequiresAdmin="true"/>

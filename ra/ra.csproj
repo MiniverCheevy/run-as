@@ -72,15 +72,28 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Voodoo">
+      <HintPath>..\packages\Voodoo.Patterns.1.0.7\lib\net40\Voodoo.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandLineParser.cs" />
-    <Compile Include="Configuration.cs" />
+    <Compile Include="Helpers\ConfigurationHelper.cs" />
+    <Compile Include="Messages\CommandLineResponse.cs" />
+    <Compile Include="Messages\Messages.cs" />
+    <Compile Include="Messages\RunProcessRequest.cs" />
+    <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\RaConfiguration.cs" />
+    <Compile Include="Models\UserAccount.cs" />
+    <Compile Include="Operations\ParseCommandLine.cs" />
+    <Compile Include="Operations\ProcessRunner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,14 +105,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="ra_TemporaryKey.pfx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Voodoo\Voodoo\Voodoo\Voodoo.csproj">
-      <Project>{878aed33-344d-44ce-b11d-f9ea7a47113a}</Project>
-      <Name>Voodoo</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -118,6 +126,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
