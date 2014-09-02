@@ -1,0 +1,25 @@
+﻿/*
+* When you read the value of a property that is defined directly on the scope, AngularJS checks to see whether there 
+* is a local property in the controller's scope and, if not, starts working its way up the scope hierarchy to see whether
+* it has inherited one. However, when you use the ng-model directive to modify such a property, AngularJS checks to see whether 
+* the scope has a property of the right name and, if not assumes you want to implicitly define it. 
+* 
+* This doesn't happen when you assign an object to the scope and then define your data properties on that object. This is because
+* JavaScript implements what is known as prototype inheritance.
+* 
+* What this means is that defining properties on the scope like this: 
+* 
+* $scope.dataValue = "Hello, Adam;
+* 
+* means that using the ng-model directive will create local variables, while using an object as an interediary, like this: 
+* 
+* $scope.data = { dataValue: "Hello, Ada" } 
+* 
+* ensures that ng-model will update the data values defined in the parent scope. This is not a bug. It is a deliberate feature 
+* that allows you to decide how your controller and its scope will work, and you can mix and match both techniques in the same
+* scope. 
+* 
+* BOTTOM LINE: If you want a value that is initially shared but will be copied when modified, then define your data properties
+* directly on the scope. To ensure that there is only one value, then define your data properties via an object.
+* 
+*/

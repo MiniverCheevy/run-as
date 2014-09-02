@@ -1,0 +1,53 @@
+<html ng-app="app">
+    <head>
+        <title>Run As Configuraiton</title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="css/voodoo.css" />
+    </head>
+    <body>
+        <h2>RunAs Configuration</h2>
+        <p class="text-danger">{{error}}</p>
+        <tabset>
+            <tab heading="Applications" ng-controller="appsList">
+                <div style="height: 400px;">
+                    <table class="table table-bordered table-striped">
+                        <thead><tr>
+                                   <th>
+                                       <voodoo-sorter
+                                           text="Name" member="key" grid-State="gridState"
+                                           onsort="post()"></voodoo-sorter>
+
+                                   </th>
+                                   <th>
+                                       <voodoo-sorter
+                                           text="Two" member="key"
+                                           ></voodoo-sorter>
+
+                                   </th>
+                               </tr>
+                        </thead>
+                        <tr data-ng-repeat="app in apps">
+                            <td>{{app.key}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <voodoo-pager 
+                    grid-state="gridState" 
+                    onchange="post()"></voodoo-pager >
+                
+            </tab>
+            <tab heading="User Accounts">users</tab>
+        </tabset>
+
+        <script src="js/angular.min.js"> </script>
+        <script src="js/ui-bootstrap-tpls-0.11.0.min.js"> </script>
+        <script src="js/app.js"> </script>
+        <script src="js/voodoo.js"> </script>
+        <script src="js/voodooPager.js"> </script>
+        <script src="js/voodooSorter.js"> </script>
+        <script src="js/AppsFactory.js"> </script>
+        <script src="js/UsersFactory.js"> </script>
+    </body>
+</html>
