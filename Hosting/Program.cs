@@ -27,7 +27,13 @@ namespace Hosting
         {
             try
             {
-                using (WebApp.Start<Startup>(url))
+                var options = new Microsoft.Owin.Hosting.StartOptions();
+                options.Urls.Add(url);
+                options.ServerFactory = "Microsoft.Owin.Host.HttpListener";
+                options.AppStartup = "Hosting.Startup";
+                
+
+                using (WebApp.Start<Startup>(options))
                 {
                     IoNic.ShellExecute(string.Format("{0}/index.html", url));
                     Console.WriteLine("Server running on {0}", url);
@@ -55,9 +61,12 @@ namespace Hosting
     public class Startup
     {
         public void Configuration(IAppBuilder app)
-        {         
-            var config = new HubConfiguration { EnableDetailedErrors = true };
+        {
+           
 
+            var config = new HubConfiguration { EnableDetailedErrors = true };
+            
+            // options.ServerFactory = "Microsoft.Owin.Host.HttpListener"
             //app.MapSignalR(config);
             app.UseFileServer(new FileServerOptions()
             {
@@ -70,6 +79,20 @@ namespace Hosting
             //    // If nancy cannot find a handler for the route then pass the request through the pipleine
             //    opt.PassThroughWhenStatusCodesAre(HttpStatusCode.NotFound);
             //});
+
+            //app.Map("/signalr", map =>
+            //{
+            //    map.UseCors(CorsOptions.AllowAll);
+
+            //    var hubConfiguration = new HubConfiguration
+            //    {
+            //        EnableDetailedErrors = true,
+            //        EnableJSONP = true
+            //    };
+
+            //    map.RunSignalR(hubConfiguration);
+            //});
+
             var apiConfig = new HttpConfiguration();
             apiConfig.Routes.MapHttpRoute(
                 name: "DefaultApi",

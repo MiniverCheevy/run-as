@@ -11,9 +11,7 @@ namespace ra
 {
     public class CommandLineParser
     {
-        private Application app = null;
         private string commandLineArguments = string.Empty;
-        private UserAccount user = null;
         private List<string> userArguments = new List<string>();
 
         internal void ParseAndExecute(string[] args)

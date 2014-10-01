@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="Voodoo">
       <HintPath>..\packages\Voodoo.Patterns.1.0.7\lib\net40\Voodoo.dll</HintPath>
@@ -57,8 +58,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AssemblyInitializer.cs" />
     <Compile Include="Hosting\CodeGeneration\CodeWalkerTests.cs" />
-    <Compile Include="Hosting\Operations\AppMapperTests.cs" />
+    <Compile Include="Hosting\Operations\Pathing\AppendPathToEnvironmentPathCommandTests.cs" />
+    <Compile Include="Hosting\Operations\Apps\AppMapperTests.cs" />
+    <Compile Include="Hosting\Operations\Pathing\IsAppOnCurrentPathQueryTests.cs" />
     <Compile Include="MappingTestHelper.cs" />
     <Compile Include="ra\Operations\ParseCommandLineTests.cs" />
     <Compile Include="ra\Operations\RunProcessTests.cs" />
@@ -81,6 +85,9 @@
       <Project>{718f0f4f-1289-4e92-b2c1-8185159c9d5a}</Project>
       <Name>ra</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Hosting\Operations\Users\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

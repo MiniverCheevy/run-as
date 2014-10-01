@@ -16,7 +16,7 @@ namespace Ra.Tests.ra.Operations
     {
         public ParseCommandLineTests()
         {
-            ConfigurationHelper.configurationDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);            
+            ConfigurationStore.configurationDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);            
         }
 
         [TestMethod]

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Hosting.Operations;
+using Hosting.Operations.Apps;
 using Voodoo;
 namespace Hosting.Controllers
 {
@@ -11,10 +13,10 @@ namespace Hosting.Controllers
 	{
 		
 		[HttpGet]
-		public Voodoo.Messages.PagedResponse<Hosting.Messages.AppMessage> Get
-			([FromUri] Hosting.Messages.AppQueryRequest request)
+		public Voodoo.Messages.PagedResponse<AppMessage> Get
+			([FromUri] AppQueryRequest request)
 			{
-				var op = new Hosting.Operations.ApplicationQuery(request);
+				var op = new AppQuery(request);
 				var response = op.Execute();
 				return response;
 			}

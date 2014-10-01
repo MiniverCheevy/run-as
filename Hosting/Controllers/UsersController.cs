@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Hosting.Operations.Users;
 using Voodoo;
 namespace Hosting.Controllers
 {
@@ -14,7 +15,7 @@ namespace Hosting.Controllers
 		public Voodoo.Messages.ListResponse<ra.Models.UserAccount> Get
 			([FromUri] Voodoo.Messages.EmptyRequest request)
 			{
-				var op = new Hosting.Operations.UserAccountQuery(request);
+				var op = new UserAccountQuery(request);
 				var response = op.Execute();
 				return response;
 			}

@@ -2,8 +2,8 @@
     <head>
         <title>Run As Configuraiton</title>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="css/bootstrap.dark.css" />
+        <link rel="stylesheet" href="css/app.css" />
         <link rel="stylesheet" href="css/voodoo.css" />
     </head>
     <body>
@@ -11,8 +11,8 @@
         <p class="text-danger">{{error}}</p>
         <tabset>
             <tab heading="Applications" ng-controller="appsList">
-                <div style="height: 400px;">
-                    <table class="table table-bordered table-striped">
+                <div class="gridShell">
+                    <table class="grid table table-bordered table-striped">
                         <thead><tr>
                                    <th>
                                        <voodoo-sorter

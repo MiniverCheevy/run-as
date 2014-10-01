@@ -27,7 +27,7 @@ namespace ra.Operations
 
             startInfo = new ProcessStartInfo();            
             commandLine = request.ProgramPath;
-            useShellExecute = !executables.Any(c => commandLine.ToLower().EndsWith(c));
+            useShellExecute = !executables.Any(c => commandLine.ToLower().EndsWith(c)) || request.RequiresAdmin;
             arguments = request.UserArgumnets == null
                             ? request.Arguments
                             : string.Format(request.Arguments, request.UserArgumnets);

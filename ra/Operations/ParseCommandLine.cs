@@ -28,7 +28,7 @@ namespace ra.Operations
 
         protected override CommandLineResponse ProcessRequest()
         {
-            config = ConfigurationHelper.Current;
+            config = ConfigurationStore.Current;
             response.User = getUserIfPresentInArgs();
             response.Application = getApplicationFromArgs();
             response.UserArguments = getAdditionalArguments();

@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hosting.Messages;
 using ra.Models;
 
-namespace Hosting.Operations
+namespace Hosting.Operations.Apps
 {
     public class Mapper
     {

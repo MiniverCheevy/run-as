@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hosting.Messages;
-using Hosting.Operations;
+using Hosting.Operations.Apps;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ra.Tests.EngineeringInterface.Test;
 using Voodoo.TestData;
 using ra.Models;
 
-namespace Ra.Tests.Hosting.Operations
+namespace Ra.Tests.Hosting.Operations.Apps
 {
 
 
