@@ -10,31 +10,32 @@ using Voodoo.Messages;
 using Voodoo.Operations;
 using ra.Models;
 
-namespace Hosting.Operations.Apps
+namespace Hosting.Operations.Users
 {
-    [Rest(Verb.Put, Resources.Apps)]
-    public class AppAddCommand: Command<AppMessage, Response>
+    [Rest(Verb.Post, Resources.Users)]
+    public class UserUpdateCommand : Command<UserMessage, Response>
     {
-        public AppAddCommand(AppMessage request) : base(request)
+        public UserUpdateCommand(UserMessage request)
+            : base(request)
         {
         }
 
         protected override void Validate()
         {
 
-            var exists = ConfigurationStore.Current.Apps
+            var exists = ConfigurationStore.Current.Users
                 .Any(c => c.Key == request.Key);
-            
-            if (exists)
-                throw new LogicException(string.Format("Key '{0}' already exists", request.Key));
+
+            if (!exists)
+                throw new LogicException(string.Format("Could not find '{0}'", request.Key));
 
             base.Validate();
         }
         protected override Response ProcessRequest()
         {
-            var app = new Application();
-            Mapper.Map(request, app);
-            ConfigurationStore.Current.Apps.Add(app);
+            var user = ConfigurationStore.Current.Users
+                .First(c => c.Key == request.Key);
+            Mapper.Map(request, user);
             ConfigurationStore.Save();
             return response;
         }

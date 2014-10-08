@@ -91,13 +91,12 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Voodoo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Voodoo.Patterns.1.0.7\lib\net40\Voodoo.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeGeneration\Resources.cs" />
+    <Content Include="Web\app\apps\appsController.js" />
+    <Content Include="Web\app\voodoo\serverError.js" />
+    <Content Include="Web\app\apps\fields.html" />
     <None Include="CodeGeneration\MultipleOutputHelper.ttinclude" />
     <Compile Include="CodeGeneration\CodeWalker.cs" />
     <Compile Include="CodeGeneration\RestAttribute.cs" />
@@ -112,12 +111,20 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Operations\Apps\AppQueryRequest.cs" />
+    <Compile Include="Operations\Apps\AppUpdateCommand.cs" />
+    <Compile Include="Operations\Apps\AppDeleteCommand.cs" />
     <Compile Include="Operations\Messages.cs" />
     <Compile Include="Operations\Pathing\AppendPathToEnvironmentPathCommand.cs" />
     <Compile Include="Operations\Apps\AppQuery.cs" />
-    <Compile Include="Operations\Apps\AppMapper.cs" />
+    <Compile Include="Operations\Apps\Mapper.cs" />
     <Compile Include="Operations\Pathing\IsAppOnCurrentPathQuery.cs" />
-    <Compile Include="Operations\Users\UserAccountQuery.cs" />
+    <Compile Include="Operations\Users\UserAddCommand.cs" />
+    <Compile Include="Operations\Users\UserDeleteCommand.cs" />
+    <Compile Include="Operations\Users\Mapper.cs" />
+    <Compile Include="Operations\Users\UserMessage.cs" />
+    <Compile Include="Operations\Users\UserQuery.cs" />
+    <Compile Include="Operations\Users\UserQueryRequest.cs" />
+    <Compile Include="Operations\Users\UserUpdateCommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Controllers\Controllers.txt">
@@ -131,11 +138,13 @@
     <Content Include="host.pdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Web\css\app.css" />
+    <Content Include="Web\app\app.css" />
+    <Content Include="Web\app\apps\edit.html" />
+    <Content Include="Web\app\apps\grid.html" />
     <Content Include="Web\css\bootstrap-theme.css" />
     <Content Include="Web\css\bootstrap.dark.css" />
     <Content Include="Web\css\bootstrap.min.css" />
-    <Content Include="Web\css\voodoo.css" />
+    <Content Include="Web\app\voodoo\voodoo.css" />
     <Content Include="Web\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Web\index.html" />
     <None Include="Controllers\Controllers.tt">
@@ -152,7 +161,7 @@
     <None Include="Web\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Web\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web\sample.forest" />
-    <None Include="Web\js\factories.tt">
+    <None Include="Web\app\factories.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>factories.txt</LastGenOutput>
     </None>
@@ -167,23 +176,23 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Web\js\angular.min.js" />
-    <Content Include="Web\js\app.js" />
-    <Content Include="Web\js\appsFactory.js">
+    <Content Include="Web\app\app.js" />
+    <Content Include="Web\app\appsFactory.js">
       <DependentUpon>factories.tt</DependentUpon>
     </Content>
-    <Content Include="Web\js\factories.txt">
+    <Content Include="Web\app\factories.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>factories.tt</DependentUpon>
     </Content>
-    <Content Include="Web\js\voodoo.js" />
-    <Content Include="Web\js\voodooPager.js" />
-    <Content Include="Web\js\voodooPager.tmpl.html" />
-    <Content Include="Web\js\usersFactory.js">
+    <Content Include="Web\app\voodoo\voodoo.js" />
+    <Content Include="Web\app\voodoo\voodooPager.js" />
+    <Content Include="Web\app\voodoo\voodooPager.tmpl.html" />
+    <Content Include="Web\app\usersFactory.js">
       <DependentUpon>factories.tt</DependentUpon>
     </Content>
-    <Content Include="Web\js\voodooSorter.js" />
-    <Content Include="Web\js\voodooSorter.tmpl.html" />
+    <Content Include="Web\app\voodoo\voodooSorter.js" />
+    <Content Include="Web\app\voodoo\voodooSorter.tmpl.html" />
     <Content Include="Web\test\e2e\scenarios.js" />
     <Content Include="Web\test\karma.conf.js" />
     <Content Include="Web\test\protractor-conf.js" />
@@ -194,6 +203,10 @@
     <Content Include="Web\js\ui-bootstrap-tpls-0.11.0.min.js" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Voodoo\Voodoo\Voodoo.csproj">
+      <Project>{878aed33-344d-44ce-b11d-f9ea7a47113a}</Project>
+      <Name>Voodoo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ra\ra.csproj">
       <Project>{718f0f4f-1289-4e92-b2c1-8185159c9d5a}</Project>
       <Name>ra</Name>

@@ -19,9 +19,13 @@ namespace Hosting.Operations.Apps
 
         protected override PagedResponse<AppMessage> ProcessRequest()
         {
-            response=
-                ra.Helpers.ConfigurationStore.Current.Apps.AsQueryable()
-                  .PagedResult<Application, AppMessage>(request, c=>Mapper.Map(c));
+            var query =
+                ra.Helpers.ConfigurationStore.Current.Apps.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(request.Key))
+                query = query.Where(c => c.Key == request.Key);
+
+            response = query.PagedResult<Application, AppMessage>(request, c=>Mapper.Map(c));
                 
             return response;
         }

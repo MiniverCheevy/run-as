@@ -11,10 +11,12 @@ namespace Ra.Tests
     [TestClass]
     public class AssemblyInitializer
     {
+
+
         [AssemblyInitialize]
         public void Init()
         {
-            ConfigurationStore._configurationPath = @"C:\DropBox\Lib\Projects\ra - Copy\Ra.Tests";
+            ConfigurationStore._configurationPath = System.AppDomain.CurrentDomain.BaseDirectory;
         }
     }
 }

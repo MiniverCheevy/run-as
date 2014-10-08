@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ra.Tests", "Ra.Tests\Ra.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "host", "host\host.csproj", "{1C1823E4-468B-4104-85FF-4AAC32331ADD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hosting.Tests", "Hosting.Tests\Hosting.Tests.csproj", "{A1745132-6187-4E80-87C7-C47A72E9E31B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voodoo", "..\Voodoo\Voodoo\Voodoo.csproj", "{878AED33-344D-44CE-B11D-F9EA7A47113A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{1C1823E4-468B-4104-85FF-4AAC32331ADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C1823E4-468B-4104-85FF-4AAC32331ADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C1823E4-468B-4104-85FF-4AAC32331ADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1745132-6187-4E80-87C7-C47A72E9E31B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1745132-6187-4E80-87C7-C47A72E9E31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1745132-6187-4E80-87C7-C47A72E9E31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1745132-6187-4E80-87C7-C47A72E9E31B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{878AED33-344D-44CE-B11D-F9EA7A47113A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878AED33-344D-44CE-B11D-F9EA7A47113A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878AED33-344D-44CE-B11D-F9EA7A47113A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{878AED33-344D-44CE-B11D-F9EA7A47113A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

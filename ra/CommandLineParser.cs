@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Voodoo;
-using ra.Messages;
 using ra.Models;
 using ra.Operations;
+using ra.Operations.Processes;
 
 namespace ra
 {
@@ -21,6 +21,7 @@ namespace ra
             {
                 Console.WriteLine(response.Message);
                 Console.ReadKey();
+                return;
             }
             var request = buildRequest(response);
             var executeResponse = new ProcessRunner(request).Execute();
@@ -29,6 +30,7 @@ namespace ra
             {
                 Console.WriteLine(response.Message);
                 Console.ReadKey();
+                return;
             }
         }
 
@@ -39,7 +41,7 @@ namespace ra
                     ProgramPath = response.Application.FullPath,
                     Arguments = response.Application.Arguments,
                     RequiresAdmin = response.Application.RequiresAdmin,
-                    UserArgumnets = response.UserArguments
+                    UserArguments = response.UserArguments
                 };
             if (response.User != null)
                 request.UserName = response.User.UserName;

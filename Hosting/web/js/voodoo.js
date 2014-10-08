@@ -1,1 +1,0 @@
-﻿angular.module('voodoo.ui', ['voodoo.ui.pager', 'voodoo.ui.sorter']);

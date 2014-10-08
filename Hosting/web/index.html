@@ -3,51 +3,33 @@
         <title>Run As Configuraiton</title>
 
         <link rel="stylesheet" href="css/bootstrap.dark.css" />
-        <link rel="stylesheet" href="css/app.css" />
-        <link rel="stylesheet" href="css/voodoo.css" />
+        <link rel="stylesheet" href="app/app.css" />
+        <link rel="stylesheet" href="app/voodoo/voodoo.css" />
+        
     </head>
     <body>
         <h2>RunAs Configuration</h2>
         <p class="text-danger">{{error}}</p>
         <tabset>
-            <tab heading="Applications" ng-controller="appsList">
-                <div class="gridShell">
-                    <table class="grid table table-bordered table-striped">
-                        <thead><tr>
-                                   <th>
-                                       <voodoo-sorter
-                                           text="Name" member="key" grid-State="gridState"
-                                           onsort="post()"></voodoo-sorter>
-
-                                   </th>
-                                   <th>
-                                       <voodoo-sorter
-                                           text="Two" member="key"
-                                           ></voodoo-sorter>
-
-                                   </th>
-                               </tr>
-                        </thead>
-                        <tr data-ng-repeat="app in apps">
-                            <td>{{app.key}}</td>
-                        </tr>
-                    </table>
-                </div>
-                <voodoo-pager 
-                    grid-state="gridState" 
-                    onchange="post()"></voodoo-pager >
+            <tab heading="Applications" ng-controller="apps">
                 
+                <div ng-if="mode == 'grid'" class="slide-animate" ng-include="gridUrl"></div>
+                <form name="editForm">
+                <div ng-if="mode == 'edit'" class="slide-animate" ng-include="editUrl"></div>
+                    </form>
             </tab>
             <tab heading="User Accounts">users</tab>
         </tabset>
 
         <script src="js/angular.min.js"> </script>
         <script src="js/ui-bootstrap-tpls-0.11.0.min.js"> </script>
-        <script src="js/app.js"> </script>
-        <script src="js/voodoo.js"> </script>
-        <script src="js/voodooPager.js"> </script>
-        <script src="js/voodooSorter.js"> </script>
-        <script src="js/AppsFactory.js"> </script>
-        <script src="js/UsersFactory.js"> </script>
+        <script src="app/app.js"> </script>
+        <script src="app/voodoo/voodoo.js"> </script>
+        <script src="app/voodoo/voodooPager.js"> </script>
+        <script src="app/voodoo/voodooSorter.js"> </script>
+        <script src="app/voodoo/serverError.js"> </script>
+        <script src="app/AppsFactory.js"> </script>
+        <script src="app/UsersFactory.js"> </script>
+        <script src="app/apps/appsController.js"> </script>
     </body>
 </html>

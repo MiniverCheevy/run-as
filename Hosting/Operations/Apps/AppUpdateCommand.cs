@@ -12,29 +12,29 @@ using ra.Models;
 
 namespace Hosting.Operations.Apps
 {
-    [Rest(Verb.Put, Resources.Apps)]
-    public class AppAddCommand: Command<AppMessage, Response>
+    [Rest(Verb.Post, Resources.Apps)]
+    public class AppUpdateCommand : Command<AppMessage, Response>
     {
-        public AppAddCommand(AppMessage request) : base(request)
+        public AppUpdateCommand(AppMessage request)
+            : base(request)
         {
         }
 
         protected override void Validate()
         {
+            base.Validate();
 
             var exists = ConfigurationStore.Current.Apps
                 .Any(c => c.Key == request.Key);
-            
-            if (exists)
-                throw new LogicException(string.Format("Key '{0}' already exists", request.Key));
 
-            base.Validate();
+            if (!exists)
+                throw new LogicException(string.Format("Could not find '{0}'", request.Key));            
         }
         protected override Response ProcessRequest()
         {
-            var app = new Application();
-            Mapper.Map(request, app);
-            ConfigurationStore.Current.Apps.Add(app);
+            var app = ConfigurationStore.Current.Apps
+                .First(c => c.Key == request.Key);
+            Mapper.Map(request, app);            
             ConfigurationStore.Save();
             return response;
         }

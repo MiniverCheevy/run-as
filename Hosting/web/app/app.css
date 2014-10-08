@@ -1,0 +1,23 @@
+﻿.grid {
+    table-layout:fixed;
+}
+.gridShell {
+    height: 400px;
+}
+.elipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+.path-column {   
+    width:600px;
+}
+.key-column {
+    width: 100px;
+}
+
+.form-group {
+
+
+}

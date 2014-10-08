@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Voodoo.Messages;
 
-namespace Hosting.Operations.Apps
+namespace Hosting.Operations.Users
 {
-    public class AppQueryRequest: PagedRequest
+    public class UserQueryRequest : PagedRequest
     {
-        public string Key { get; set; }
-
         public override string DefaultSortMember
         {
             get { return "Key"; }
