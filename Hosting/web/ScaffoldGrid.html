@@ -1,0 +1,58 @@
+﻿<div class="form-horizontal">
+    <div class="col-md-11">
+        
+    </div>
+    <div class="col-md-1">    
+        <button type="button" class="btn btn-primary active" ng-click="add()">
+            Add New
+        </button>
+    </div>
+</div>
+<div class="gridShell">
+    <table class="grid table table-bordered table-striped">
+        <thead>
+			<tr>
+                <th class="">
+                    <voodoo-sorter
+                        text="Key" member="key" grid-state="gridState"
+                        onsort="refresh()"></voodoo-sorter>
+                </th>
+                <th class="">
+                    <voodoo-sorter
+                        text="Full Path" member="fullPath" grid-state="gridState"
+                        onsort="refresh()"></voodoo-sorter>
+                </th>
+                <th class="">
+                    <voodoo-sorter
+                        text="Arguments" member="arguments" grid-state="gridState"
+                        onsort="refresh()"></voodoo-sorter>
+                </th>
+                <th class="">
+                    <voodoo-sorter
+                        text="Requires Admin" member="requiresAdmin" grid-state="gridState"
+                        onsort="refresh()"></voodoo-sorter>
+                </th>
+                <th class="">
+                    <voodoo-sorter
+                        text="Url Encode Arguments" member="urlEncodeArguments" grid-state="gridState"
+                        onsort="refresh()"></voodoo-sorter>
+                </th>
+		</tr>
+		</thead>
+        <tr data-ng-repeat="item in data">
+            <td>{{key}}</td>
+            <td>{{fullPath}}</td>
+            <td>{{arguments}}</td>
+            <td>{{requiresAdmin}}</td>
+            <td>{{urlEncodeArguments}}</td>
+
+            <td>
+				<button ng-click="edit(item.key)" 
+				class="btn btn-xs btn-primary">Edit</button>
+			</td>
+	</tr>
+    </table>
+</div>
+<voodoo-pager
+    grid-state="gridState"
+    onchange="refresh()"></voodoo-pager>

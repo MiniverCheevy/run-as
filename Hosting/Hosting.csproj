@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeGeneration\Resources.cs" />
+    <Content Include="Web\app\apps\add.html" />
     <Content Include="Web\app\apps\appsController.js" />
     <Content Include="Web\app\voodoo\serverError.js" />
     <Content Include="Web\app\apps\fields.html" />
@@ -165,6 +166,14 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>factories.txt</LastGenOutput>
     </None>
+    <None Include="Web\ScaffoldFields.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ScaffoldFields.html</LastGenOutput>
+    </None>
+    <None Include="Web\ScaffoldGrid.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ScaffoldGrid.html</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -193,6 +202,16 @@
     </Content>
     <Content Include="Web\app\voodoo\voodooSorter.js" />
     <Content Include="Web\app\voodoo\voodooSorter.tmpl.html" />
+    <Content Include="Web\ScaffoldFields.html">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScaffoldFields.tt</DependentUpon>
+    </Content>
+    <Content Include="Web\ScaffoldGrid.html">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScaffoldGrid.tt</DependentUpon>
+    </Content>
     <Content Include="Web\test\e2e\scenarios.js" />
     <Content Include="Web\test\karma.conf.js" />
     <Content Include="Web\test\protractor-conf.js" />

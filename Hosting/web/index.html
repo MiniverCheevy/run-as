@@ -1,7 +1,6 @@
 <html ng-app="app">
     <head>
         <title>Run As Configuraiton</title>
-
         <link rel="stylesheet" href="css/bootstrap.dark.css" />
         <link rel="stylesheet" href="app/app.css" />
         <link rel="stylesheet" href="app/voodoo/voodoo.css" />
@@ -9,14 +8,21 @@
     </head>
     <body>
         <h2>RunAs Configuration</h2>
-        <p class="text-danger">{{error}}</p>
+        
         <tabset>
-            <tab heading="Applications" ng-controller="apps">
-                
-                <div ng-if="mode == 'grid'" class="slide-animate" ng-include="gridUrl"></div>
+            <tab heading="Applications" ng-controller="apps">                
+                <p class="text-danger">{{error}}</p>
+                <p class="text-info">{{info}}</p>
+                <div ng-if="mode == 'grid'" class="slide-animate" ng-include="gridUrl">
+                </div>
                 <form name="editForm">
-                <div ng-if="mode == 'edit'" class="slide-animate" ng-include="editUrl"></div>
-                    </form>
+                    <div ng-if="mode == 'edit'" class="slide-animate" ng-include="editUrl">
+                    </div>
+                </form>
+                 <form name="addForm">
+                    <div ng-if="mode == 'add'" class="slide-animate" ng-include="addUrl">
+                    </div>
+                </form>
             </tab>
             <tab heading="User Accounts">users</tab>
         </tabset>

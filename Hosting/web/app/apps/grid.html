@@ -1,4 +1,13 @@
-﻿<div class="gridShell">
+﻿<div >
+    <div class="col-md-11">        
+    </div>
+    <div class="col-md-1">    
+        <button type="button" class="btn btn-primary active" ng-click="add()">
+            Add New
+        </button>
+    </div>
+</div>
+<div class="gridShell">
     <table class="grid table table-bordered table-striped">
         <thead>
             <tr>
@@ -6,24 +15,26 @@
                     <voodoo-sorter
                         text="Name" member="key" grid-state="gridState"
                         onsort="refresh()"></voodoo-sorter>
-
                 </th>
                 <th class="path-column">
                     <voodoo-sorter
                         text="Path" member="fullPath" grid-state="gridState"
                         onsort="refresh()"></voodoo-sorter>
-
                 </th>
                 <th class="key-column"></th>
             </tr>
         </thead>
-        <tr data-ng-repeat="app in apps">
-            <td>{{app.key}}</td>
-            <td>{{app.fullPath}}</td>
-            <td><button ng-click="edit(app.key)" class="btn btn-xs btn-primary">Edit</button></td>
+        <tr data-ng-repeat="item in data">
+            <td>{{item.key}}</td>
+            <td>{{item.fullPath}}</td>
+            <td>
+                <button ng-click="edit(item.key)" class="btn btn-xs btn-primary">
+                    Edit
+                </button>
+            </td>
         </tr>
     </table>
 </div>
-<voodoo-pager
-    grid-state="gridState"
-    onchange="refresh()"></voodoo-pager>
+<div>
+<voodoo-pager grid-state="gridState" onchange="refresh()"></voodoo-pager>
+</div>

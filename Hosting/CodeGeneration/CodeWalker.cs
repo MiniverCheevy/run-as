@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using Voodoo;
 
 namespace Hosting.CodeGeneration
@@ -8,26 +10,36 @@ namespace Hosting.CodeGeneration
     public class CodeWalker
     {
         public const string Namespace = "Hosting.Controllers";
-        public List<Resource> Resources { get; set; }
+        private Type[] types;
+
         public CodeWalker()
         {
-           Resources = new List<Resource>();
+            Resources = new List<Resource>();
             var assembly = typeof (CodeWalker).Assembly;
-            var types = assembly.GetTypes();
+            types = assembly.GetTypes();
             var interestingTypes =
                 types.Where(c => c.GetCustomAttributes(typeof (RestAttribute), false).Any()).ToArray();
 
-            var resources = interestingTypes.ToLookup(c => c.GetCustomAttributes(typeof(RestAttribute), false).First().To<RestAttribute>().Resource,
-                                                   c =>
-                                                   buildVerb(
-                                                       c.GetCustomAttributes(typeof (RestAttribute), false).First(), c));
+            var resources =
+                interestingTypes.ToLookup(
+                    c => c.GetCustomAttributes(typeof (RestAttribute), false).First().To<RestAttribute>().Resource,
+                    c =>
+                    buildVerb(
+                        c.GetCustomAttributes(typeof (RestAttribute), false).First(), c));
             foreach (var key in resources.Select(c => c.Key).ToArray())
             {
-                var resource = new Resource() { Name = key, Namespace = Namespace , ClassName = string.Format("{0}Controller",key)};
+                var resource = new Resource()
+                    {
+                        Name = key,
+                        Namespace = Namespace,
+                        ClassName = string.Format("{0}Controller", key)
+                    };
                 resource.Verbs.AddRange(resources[key]);
                 Resources.Add(resource);
             }
         }
+
+        public List<Resource> Resources { get; set; }
 
         public static Dictionary<Verb, RestMethod> Methods
         {
@@ -37,7 +49,8 @@ namespace Hosting.CodeGeneration
                     {
                         {Verb.Get, new RestMethod() {Attribute = "[HttpGet]", Name = "Get", Parameter = "[FromUri]"}},
                         {
-                            Verb.Post, new RestMethod() {Attribute = "[HttpPost]", Name = "Post", Parameter = "[FromUri]"}
+                            Verb.Post,
+                            new RestMethod() {Attribute = "[HttpPost]", Name = "Post", Parameter = "[FromUri]"}
                         },
                         {Verb.Put, new RestMethod() {Attribute = "[HttpPut]", Name = "Put", Parameter = "[FromUri]"}},
                         {
@@ -46,7 +59,30 @@ namespace Hosting.CodeGeneration
                         },
                     };
             }
-        }        
+        }
+
+        public Field[] GetProperties(string typeFullName)
+        {
+            var result = new List<Field>();
+            var type = types.Where(c => c.FullName == typeFullName).First();
+            var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance).ToArray();
+            foreach (var property in properties.Where(c=>c.PropertyType.IsScalar()).ToArray())
+            {
+                var field = new Field();
+                var name = property.Name;
+                field.Name = name;
+                field.FriendlyName = name.ToFriendlyString();
+                field.CamelCaseName = name.Substring(0, 1).ToLower() + name.Substring(1);
+                field.TypeName = property.PropertyType.Name;
+
+                var stringLength = property.GetCustomAttribute<StringLengthAttribute>();
+                if (stringLength != null)
+                    field.MaxLength = stringLength.MaximumLength;
+
+                result.Add(field);
+            }
+            return result.ToArray();
+        }
 
         private RestMethod buildVerb(object attributeObject, Type operationType)
         {
@@ -60,7 +96,7 @@ namespace Hosting.CodeGeneration
             }
 
             var typeArguments = type.GetGenericArguments();
-            var verb =  Methods[attribute.Verb];
+            var verb = Methods[attribute.Verb];
             verb.RequestTypeName = FixUpTypeNamex(typeArguments[0]);
             verb.ResponseTypeName = FixUpTypeNamex(typeArguments[1]);
             verb.OperationTypeName = FixUpTypeNamex(operationType);
@@ -117,20 +153,30 @@ namespace Hosting.CodeGeneration
 
             return result;
         }
-        
+
+        public class Field
+        {
+            public string Name { get; set; }
+            public string FriendlyName { get; set; }
+            public string CamelCaseName { get; set; }
+            public string TypeName { get; set; }
+            public int? MaxLength { get; set; }
+        }
+
         [Serializable]
         public class Resource
         {
-            public string Namespace { get; set; }
-            public string ClassName { get; set; }
-            public List<RestMethod> Verbs { get; set; }
-            public string Name { get; set; }
-
             public Resource()
             {
                 Verbs = new List<RestMethod>();
             }
+
+            public string Namespace { get; set; }
+            public string ClassName { get; set; }
+            public List<RestMethod> Verbs { get; set; }
+            public string Name { get; set; }
         }
+
         [Serializable]
         public class RestMethod
         {

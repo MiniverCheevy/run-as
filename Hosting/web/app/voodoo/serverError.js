@@ -16,9 +16,13 @@
                 link: function(scope, element, attrs, ngModelController) {
 
                     // Bootstrap alert template for error
-                    var template = '<div class="alert alert-danger" role="alert">' +
-                        '<i class="glyphicon glyphicon-warning-sign"></i> ' +
-                        '%error%</div>';
+                    //var template = '<div class="alert alert-danger" role="alert">' +
+                    //    '<i class="glyphicon glyphicon-warning-sign"></i> ' +
+                    //    '%error%</div>';
+                //    var template = '<span class="label label-danger"><i class="glyphicon glyphicon-warning-sign"></i>&nbsp;' +
+                //'%error%</span>';
+                    var template = '<span class="text-danger"><i class="glyphicon glyphicon-warning-sign"></i>&nbsp;' +
+                        '%error%</span>';
 
                     // Create an element to hold the validation message
                     var decorator = angular.element(' <div class="col-lg-4"></div>');
