@@ -1,0 +1,13 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ include file="$(ProjectDir)\CodeGeneration\MultipleOutputHelper.ttinclude" #>
+<#@ output extension=".txt" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ assembly name="$(ProjectDir)\bin\Hosting.dll"#>
+<#@ assembly name="$(ProjectDir)\bin\Voodoo.dll"#>
+<#
+var manager = Manager.Create(Host, GenerationEnvironment);
+var walker = new Hosting.CodeGeneration.CodeWalker();
+#>

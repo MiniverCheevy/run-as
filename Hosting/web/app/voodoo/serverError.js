@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module('voodoo.ui.serverError', [])
+    angular.module('serverError', [])
         .directive("serverError", [function() {
             //http://icanmakethiswork.blogspot.com/2014/08/angularjs-meet-aspnet-server-validation.html
             // Usage:

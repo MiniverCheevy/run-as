@@ -96,7 +96,7 @@ angular.module('voodoo.ui.pager', [])
         };
 
     }])
-    .directive('voodooPager', function() {
+    .directive('vPager', function() {
         return {
             restrict: 'EA',
             replace: true,

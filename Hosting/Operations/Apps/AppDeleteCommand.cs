@@ -21,7 +21,10 @@ namespace Hosting.Operations.Apps
         {
         }
 
-       
+        protected override void Validate()
+        {
+            //Do nothing
+        }
         protected override Response ProcessRequest()
         {
             var apps = ConfigurationStore.Current.Apps.Where(c => c.Key == request.Key).ToArray();

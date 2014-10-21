@@ -96,8 +96,10 @@
     <Compile Include="CodeGeneration\Resources.cs" />
     <Content Include="Web\app\apps\add.html" />
     <Content Include="Web\app\apps\appsController.js" />
+    <Content Include="Web\app\voodoo\ngReallyClick.js" />
     <Content Include="Web\app\voodoo\serverError.js" />
     <Content Include="Web\app\apps\fields.html" />
+    <None Include="CodeGeneration\CodeWalker.ttinclude" />
     <None Include="CodeGeneration\MultipleOutputHelper.ttinclude" />
     <Compile Include="CodeGeneration\CodeWalker.cs" />
     <Compile Include="CodeGeneration\RestAttribute.cs" />
@@ -142,6 +144,8 @@
     <Content Include="Web\app\app.css" />
     <Content Include="Web\app\apps\edit.html" />
     <Content Include="Web\app\apps\grid.html" />
+    <Content Include="Web\app\voodoo\voodooDatePicker.js" />
+    <Content Include="Web\app\voodoo\voodooDatePicker.tmpl.html" />
     <Content Include="Web\css\bootstrap-theme.css" />
     <Content Include="Web\css\bootstrap.dark.css" />
     <Content Include="Web\css\bootstrap.min.css" />
@@ -157,6 +161,7 @@
     </Content>
     <None Include="postBuild.bat" />
     <None Include="CodeGeneration\TemplateFilemanager.CS.ttinclude" />
+    <Content Include="Web\app\voodoo\voodooServerError.js" />
     <None Include="Web\controllerScope.forest" />
     <None Include="Web\fonts\glyphicons-halflings-regular.eot" />
     <None Include="Web\fonts\glyphicons-halflings-regular.ttf" />

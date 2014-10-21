@@ -39,7 +39,7 @@ namespace Hosting.Controllers
 
 		[HttpDelete]
 		public Voodoo.Messages.Response Delete
-			( Hosting.Operations.Apps.AppMessage request)
+			([FromUri] Hosting.Operations.Apps.AppMessage request)
 			{
 				var op = new Hosting.Operations.Apps.AppDeleteCommand(request);
 				var response = op.Execute();

@@ -29,7 +29,7 @@ namespace Hosting.Controllers
 
 		[HttpDelete]
 		public Voodoo.Messages.Response Delete
-			( Hosting.Operations.Users.UserMessage request)
+			([FromUri] Hosting.Operations.Users.UserMessage request)
 			{
 				var op = new Hosting.Operations.Users.UserDeleteCommand(request);
 				var response = op.Execute();

@@ -1,41 +1,47 @@
-<html ng-app="app">
-    <head>
-        <title>Run As Configuraiton</title>
-        <link rel="stylesheet" href="css/bootstrap.dark.css" />
-        <link rel="stylesheet" href="app/app.css" />
-        <link rel="stylesheet" href="app/voodoo/voodoo.css" />
-        
-    </head>
-    <body>
-        <h2>RunAs Configuration</h2>
-        
-        <tabset>
-            <tab heading="Applications" ng-controller="apps">                
-                <p class="text-danger">{{error}}</p>
-                <p class="text-info">{{info}}</p>
-                <div ng-if="mode == 'grid'" class="slide-animate" ng-include="gridUrl">
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <title>Run As Configuraiton</title>
+    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="css/bootstrap.dark.css" />
+    <link rel="stylesheet" href="app/app.css" />
+    <link rel="stylesheet" href="app/voodoo/voodoo.css" />
+</head>
+<body>
+    <h2>RunAs Configuration</h2>
+    <tabset>
+        <tab heading="Applications" ng-controller="apps">
+            
+                <span class="text-danger">{{error}}</span>
+                <span class="text-info">{{info}}</span>            
+            
+            <div ng-if="mode == 'grid'" class="slide-animate" ng-include="gridUrl">
+            </div>
+            <form name="editForm">
+                <div ng-if="mode == 'edit'" class="slide-animate" ng-include="editUrl">
                 </div>
-                <form name="editForm">
-                    <div ng-if="mode == 'edit'" class="slide-animate" ng-include="editUrl">
-                    </div>
-                </form>
-                 <form name="addForm">
-                    <div ng-if="mode == 'add'" class="slide-animate" ng-include="addUrl">
-                    </div>
-                </form>
-            </tab>
-            <tab heading="User Accounts">users</tab>
-        </tabset>
+            </form>
+            <form name="addForm">
+                <div ng-if="mode == 'add'" class="slide-animate" ng-include="addUrl">
+                </div>
+            </form>
+        </tab>
+        <tab heading="User Accounts">users</tab>
+    </tabset>
 
-        <script src="js/angular.min.js"> </script>
-        <script src="js/ui-bootstrap-tpls-0.11.0.min.js"> </script>
-        <script src="app/app.js"> </script>
-        <script src="app/voodoo/voodoo.js"> </script>
-        <script src="app/voodoo/voodooPager.js"> </script>
-        <script src="app/voodoo/voodooSorter.js"> </script>
-        <script src="app/voodoo/serverError.js"> </script>
-        <script src="app/AppsFactory.js"> </script>
-        <script src="app/UsersFactory.js"> </script>
-        <script src="app/apps/appsController.js"> </script>
-    </body>
+    <script src="js/angular.min.js"> </script>
+    <script src="js/ui-bootstrap-tpls-0.11.0.min.js"> </script>
+    <script src="app/app.js"> </script>
+    <script src="app/voodoo/voodoo.js"> </script>
+    <script src="app/voodoo/voodooPager.js"> </script>
+    <script src="app/voodoo/voodooSorter.js"> </script>
+    <script src="app/voodoo/voodooDatePicker.js"> </script>
+    <script src="app/voodoo/serverError.js"> </script>
+    <script src="app/voodoo/ngReallyClick.js"> </script>
+    <!--<script src="app/voodoo/voodooServerError.js"> </script>-->
+    <!--<script src="app/dialogs/dialogs.js"> </script>-->
+    <script src="app/AppsFactory.js"> </script>
+    <script src="app/UsersFactory.js"> </script>
+    <script src="app/apps/appsController.js"> </script>
+</body>
 </html>

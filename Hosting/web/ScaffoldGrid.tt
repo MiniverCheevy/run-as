@@ -1,14 +1,11 @@
 ﻿<#@ template debug="true" hostspecific="true" language="C#" #>
 <#@ assembly name="System.Core" #>
-<#@ include file="$(ProjectDir)\CodeGeneration\MultipleOutputHelper.ttinclude" #>
 <#@ output extension=".html" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ assembly name="$(ProjectDir)\bin\hosting.dll"#>
-<#@ assembly name="$(ProjectDir)\bin\Voodoo.dll"#>
+<#@ include file="$(ProjectDir)\CodeGeneration\CodeWalker.ttinclude" #>
 <#
-var walker = new Hosting.CodeGeneration.CodeWalker();
 var properties = walker.GetProperties("Hosting.Operations.Apps.AppMessage");
 #>
 <div class="form-horizontal">

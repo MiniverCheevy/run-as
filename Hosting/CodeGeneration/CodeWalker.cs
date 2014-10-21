@@ -48,25 +48,22 @@ namespace Hosting.CodeGeneration
                 return new Dictionary<Verb, RestMethod>()
                     {
                         {Verb.Get, new RestMethod() {Attribute = "[HttpGet]", Name = "Get", Parameter = "[FromUri]"}},
-                        {
-                            Verb.Post,
-                            new RestMethod() {Attribute = "[HttpPost]", Name = "Post", Parameter = "[FromUri]"}
-                        },
+                        {Verb.Post, new RestMethod() {Attribute = "[HttpPost]", Name = "Post", Parameter = "[FromUri]"}},
                         {Verb.Put, new RestMethod() {Attribute = "[HttpPut]", Name = "Put", Parameter = "[FromUri]"}},
-                        {
-                            Verb.Delete,
-                            new RestMethod() {Attribute = "[HttpDelete]", Name = "Delete", Parameter = string.Empty}
-                        },
+                        {Verb.Delete,new RestMethod() {Attribute = "[HttpDelete]", Name = "Delete", Parameter = "[FromUri]"}},
                     };
             }
         }
 
-        public Field[] GetProperties(string typeFullName)
+        public Field[] GetProperties(string typeFullName, bool instanceOnly = true)
         {
             var result = new List<Field>();
-            var type = types.Where(c => c.FullName == typeFullName).First();
-            var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance).ToArray();
-            foreach (var property in properties.Where(c=>c.PropertyType.IsScalar()).ToArray())
+            var type = types.First(c => c.FullName == typeFullName);
+            var flags = BindingFlags.Public | BindingFlags.Instance;
+            if (instanceOnly)
+                flags = flags | BindingFlags.DeclaredOnly;
+            var properties = type.GetProperties(flags).ToArray();
+            foreach (var property in properties.Where(c => c.PropertyType.IsScalar()).ToArray())
             {
                 var field = new Field();
                 var name = property.Name;

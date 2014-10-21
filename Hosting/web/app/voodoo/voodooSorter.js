@@ -1,4 +1,5 @@
-﻿angular.module('voodoo.ui.sorter', [])
+﻿(function () {
+angular.module('voodoo.ui.sorter', [])
     .controller('voodooSorterController', ['$scope', function($scope) {
         self.scope = $scope;
         $scope.currentSortKey = '';
@@ -49,7 +50,7 @@
 
 
     }])
-    .directive('voodooSorter', function() {
+    .directive('vSorter', function() {
         return {
             restrict: 'EA',
             replace: true,
@@ -74,3 +75,4 @@
         };
 
     });
+}())

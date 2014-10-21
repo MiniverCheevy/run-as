@@ -12,14 +12,14 @@
         <thead>
             <tr>
                 <th class="key-column">
-                    <voodoo-sorter
-                        text="Name" member="key" grid-state="gridState"
-                        onsort="refresh()"></voodoo-sorter>
+                    <v-sorter
+                        text="Name" member="key" grid-state="state"
+                        onsort="refresh()"></v-sorter>
                 </th>
                 <th class="path-column">
-                    <voodoo-sorter
-                        text="Path" member="fullPath" grid-state="gridState"
-                        onsort="refresh()"></voodoo-sorter>
+                    <v-sorter
+                        text="Path" member="fullPath" grid-state="state"
+                        onsort="refresh()"></v-sorter>
                 </th>
                 <th class="key-column"></th>
             </tr>
@@ -36,5 +36,5 @@
     </table>
 </div>
 <div>
-<voodoo-pager grid-state="gridState" onchange="refresh()"></voodoo-pager>
+<v-pager grid-state="state" onchange="refresh()"></v-pager>
 </div>
