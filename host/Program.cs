@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-
-namespace host
+namespace RunAsWrapper.Configuration
 {
     public class Program
     {

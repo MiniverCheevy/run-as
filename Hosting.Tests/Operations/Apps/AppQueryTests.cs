@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hosting.Operations.Apps;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RunAsWrapper.Core.Operations.Apps;
 
 namespace Hosting.Tests.Operations.Apps
 {

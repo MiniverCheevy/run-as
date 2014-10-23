@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hosting.Operations.Users;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ra.Helpers;
+using RunAsWrapper.Core.Helpers;
+using RunAsWrapper.Core.Operations.Users;
 
 namespace Hosting.Tests.Operations.Users
 {
@@ -23,7 +23,7 @@ namespace Hosting.Tests.Operations.Users
             var newUserCount = ConfigurationStore.Current.Users.Count;
             Assert.AreEqual(null, response.Message);
             Assert.AreEqual(true, response.IsOk);
-            Assert.AreEqual(userCount, ConfigurationStore.Current.Users.Count);
+            Assert.AreEqual(userCount, newUserCount);
         }
 
         [TestMethod]
@@ -31,11 +31,9 @@ namespace Hosting.Tests.Operations.Users
         {
             var request = new UserMessage() { Key = "WrongKey", UserName = "foo@bar.com"};
             ConfigurationStore.Refresh();
-            var userCount = ConfigurationStore.Current.Users.Count;
             new UserDeleteCommand(request).Execute();
             var response = new UserUpdateCommand(request).Execute();
             ConfigurationStore.Refresh();
-            var newUserCount = ConfigurationStore.Current.Users.Count;
             Assert.IsTrue(response.Message.StartsWith("Could not find"));
             Assert.AreEqual(false, response.IsOk);
         }

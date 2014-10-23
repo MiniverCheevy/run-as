@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
 using Voodoo;
 
 namespace Hosting.Tests
 {
-    namespace EngineeringInterface.Test
-    {
+
         public class MappingTesterHelper<TSource, TTarget>
         {
             protected TSource source;
@@ -15,12 +12,12 @@ namespace Hosting.Tests
 
             public PropertyInfo[] SourceProperties
             {
-                get { return typeof (TSource).GetProperties().Where(c => c.PropertyType.IsScalar()).ToArray(); }
+                get { return typeof(TSource).GetProperties().Where(c => c.PropertyType.IsScalar()).ToArray(); }
             }
 
             public PropertyInfo[] TargetProperties
             {
-                get { return typeof (TTarget).GetProperties().Where(c => c.PropertyType.IsScalar()).ToArray(); }
+                get { return typeof(TTarget).GetProperties().Where(c => c.PropertyType.IsScalar()).ToArray(); }
             }
 
             public PropertyInfo[] CommonProperties
@@ -34,5 +31,5 @@ namespace Hosting.Tests
                 }
             }
         }
-    }
+    
 }

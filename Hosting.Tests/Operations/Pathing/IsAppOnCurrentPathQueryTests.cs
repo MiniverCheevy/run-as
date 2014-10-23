@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hosting.Operations.Pathing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RunAsWrapper.Core.Operations.Pathing;
 
 namespace Hosting.Tests.Operations.Pathing
 {
@@ -29,8 +29,7 @@ namespace Hosting.Tests.Operations.Pathing
         [TestMethod]
         public void Execute_IsNotOnPath_ReturnsFalse()
         {
-            var path = Environment.GetEnvironmentVariable(pathEnvironmentalVariable);
-            var testPath = @"C:\bar";
+            const string testPath = @"C:\bar";
                         
             var request = new PathRequest { Path = testPath };
             var response = new IsAppOnCurrentPathQuery(request).Execute();

@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
     <Reference Include="Voodoo">
       <HintPath>..\packages\Voodoo.Patterns.1.0.18\lib\net40\Voodoo.dll</HintPath>
     </Reference>
@@ -67,6 +68,8 @@
     <Compile Include="Operations\Apps\AppUpdateCommandTests.cs" />
     <Compile Include="Operations\Pathing\AppendPathToEnvironmentPathCommandTests.cs" />
     <Compile Include="Operations\Pathing\IsAppOnCurrentPathQueryTests.cs" />
+    <Compile Include="Operations\Processes\ParseCommandLineTests.cs" />
+    <Compile Include="Operations\Processes\RunProcessTests.cs" />
     <Compile Include="Operations\Users\MapperTests.cs" />
     <Compile Include="Operations\Users\UserAddCommandTests.cs" />
     <Compile Include="Operations\Users\UserDeleteCommandTests.cs" />
@@ -75,13 +78,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hosting\Hosting.csproj">
+    <ProjectReference Include="..\Hosting\RunAsWrapper.Core.csproj">
       <Project>{66654249-E16F-42AB-9029-B9B57793E9C1}</Project>
-      <Name>Hosting</Name>
+      <Name>RunAsWrapper.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ra\ra.csproj">
+    <ProjectReference Include="..\ra\RunAsWrapper.csproj">
       <Project>{718f0f4f-1289-4e92-b2c1-8185159c9d5a}</Project>
-      <Name>ra</Name>
+      <Name>RunAsWrapper</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

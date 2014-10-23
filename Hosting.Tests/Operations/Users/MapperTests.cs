@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hosting.Operations.Users;
-using Hosting.Tests.EngineeringInterface.Test;
+using Hosting.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RunAsWrapper.Core.Models;
+using RunAsWrapper.Core.Operations.Users;
 using Voodoo.TestData;
-using ra.Models;
 
 namespace Hosting.Tests.Operations.Users
 {

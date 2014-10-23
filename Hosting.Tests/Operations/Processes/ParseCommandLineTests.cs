@@ -5,10 +5,10 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ra.Helpers;
-using ra.Operations.Processes;
+using RunAsWrapper.Core.Helpers;
+using RunAsWrapper.Core.Operations.Processes;
 
-namespace Ra.Tests.Operations.Processes
+namespace Hosting.Tests.Operations.Processes
 {
     [TestClass]
     public class ParseCommandLineTests

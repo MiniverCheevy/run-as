@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ra.Operations.Processes;
+using RunAsWrapper.Core.Operations.Processes;
 
 namespace Ra.Tests.Operations.Processes
 {    

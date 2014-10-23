@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hosting.Operations.Pathing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RunAsWrapper.Core.Operations.Pathing;
 
 namespace Hosting.Tests.Operations.Pathing
 {

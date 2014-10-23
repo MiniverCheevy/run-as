@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hosting.Operations.Users;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ra.Helpers;
+using RunAsWrapper.Core.Helpers;
+using RunAsWrapper.Core.Operations.Users;
 
 namespace Hosting.Tests.Operations.Users
 {
@@ -23,7 +23,7 @@ namespace Hosting.Tests.Operations.Users
             var newUserCount = ConfigurationStore.Current.Users.Count;
             Assert.AreEqual(null, response.Message);
             Assert.AreEqual(true, response.IsOk);
-            Assert.AreEqual(appCount - 1, ConfigurationStore.Current.Users.Count);
+            Assert.AreEqual(appCount - 1, newUserCount);
         }
     }
 }

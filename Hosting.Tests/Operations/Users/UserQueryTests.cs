@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hosting.Operations.Users;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RunAsWrapper.Core.Operations.Users;
 using Voodoo.Messages;
 
 namespace Hosting.Tests.Operations.Users

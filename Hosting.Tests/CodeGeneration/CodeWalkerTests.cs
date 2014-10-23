@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hosting.CodeGeneration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RunAsWrapper.Core.CodeGeneration;
 
 namespace Ra.Tests.Hosting.CodeGeneration
 {

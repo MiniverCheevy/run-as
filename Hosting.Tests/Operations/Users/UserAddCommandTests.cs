@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hosting.Operations;
-using Hosting.Operations.Users;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ra.Helpers;
+using RunAsWrapper.Core.Helpers;
+using RunAsWrapper.Core.Operations;
+using RunAsWrapper.Core.Operations.Users;
 
 namespace Hosting.Tests.Operations.Users
 {

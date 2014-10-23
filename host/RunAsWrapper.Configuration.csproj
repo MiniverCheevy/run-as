@@ -7,8 +7,8 @@
     <ProjectGuid>{1C1823E4-468B-4104-85FF-4AAC32331ADD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>host</RootNamespace>
-    <AssemblyName>host</AssemblyName>
+    <RootNamespace>RunAsWrapper.Configuration</RootNamespace>
+    <AssemblyName>config</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\build-outputs\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,13 +24,13 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\build-outputs\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>host.Program</StartupObject>
+    <StartupObject>RunAsWrapper.Configuration.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,9 +46,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hosting\Hosting.csproj">
+    <ProjectReference Include="..\Hosting\RunAsWrapper.Core.csproj">
       <Project>{66654249-e16f-42ab-9029-b9b57793e9c1}</Project>
-      <Name>Hosting</Name>
+      <Name>RunAsWrapper.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
