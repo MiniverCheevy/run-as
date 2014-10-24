@@ -1,7 +1,6 @@
-packages/
-bin/
-obj/
-build-outputs/
+
+bin
+obj
 
 *.log
 *.sqlite
