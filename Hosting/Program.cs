@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -21,13 +22,15 @@ namespace Hosting
 {
     public class Program
     {
-        static string url = "http://localhost:9999";
+        static string url = "http://localhost:{0}";
 
         public static void Main(string[] args)
         {
             try
             {
                 var options = new Microsoft.Owin.Hosting.StartOptions();
+                var port = ConfigurationManager.AppSettings["port"] ?? "9999";
+                url = string.Format(url, port);
                 options.Urls.Add(url);
                 options.ServerFactory = "Microsoft.Owin.Host.HttpListener";
                 options.AppStartup = "Hosting.Startup";

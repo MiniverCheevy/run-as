@@ -3,8 +3,8 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ assembly name="$(ProjectDir)\bin\RunAsWrapper.Core.dll"#>s
-<#@ assembly name="$(ProjectDir)\bin\Voodoo.dll"#>
+<#@ assembly name="$(ProjectDir)..\build-outputs\RunAsWrapper.Core.dll"#>s
+<#@ assembly name="$(ProjectDir)..\build-outputs\Voodoo.dll"#>
 <#
 var manager = Manager.Create(Host, GenerationEnvironment);
 var walker = new RunAsWrapper.Core.CodeGeneration.CodeWalker();

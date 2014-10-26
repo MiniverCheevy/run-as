@@ -58,7 +58,9 @@ namespace RunAsWrapper.Core.CodeGeneration
         public Field[] GetProperties(string typeFullName, bool instanceOnly = true)
         {
             var result = new List<Field>();
-            var type = types.First(c => c.FullName == typeFullName);
+            var type = types.FirstOrDefault(c => c.FullName == typeFullName);
+            if (type == null)
+                throw new Exception(string.Format("Could not find type {0}", typeFullName));
             var flags = BindingFlags.Public | BindingFlags.Instance;
             if (instanceOnly)
                 flags = flags | BindingFlags.DeclaredOnly;

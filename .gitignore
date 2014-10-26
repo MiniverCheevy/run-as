@@ -17,7 +17,7 @@ _ReSharper.*
 *.user
 *.vspscc
 *.ncrunchproject
-*.ncrunchsolution
+*.ncrunchsolutions
 *.nuspec
 *.suo
 *.cache

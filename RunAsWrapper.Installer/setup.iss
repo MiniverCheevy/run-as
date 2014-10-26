@@ -22,10 +22,12 @@ DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 OutputBaseFilename=ra.setup
-SetupIconFile=C:\DropBox\Lib\Projects\ra - Copy\ra\Circle_Green.ico
-Password=C:\DropBox\Lib\Projects\Setup
+SetupIconFile="C:\DropBox\Lib\Projects\ra - Copy\ra\Circle_Green.ico"
 Compression=lzma
 SolidCompression=yes
+LicenseFile=C:\DropBox\Lib\Projects\ra - Copy\ra\MITLicense.txt
+VersionInfoCopyright=Shawn Doucet, 2014
+VersionInfoProductName=Run As Wrapper
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -36,27 +38,16 @@ Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\config.exe.config"; Des
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\config.pdb"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\config.ra"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.AspNet.SignalR.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.AspNet.SignalR.Core.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.AspNet.SignalR.Owin.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.AspNet.SignalR.Owin.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.FileSystems.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.FileSystems.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.Host.HttpListener.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.Host.HttpListener.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.Hosting.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.Hosting.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.Security.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.Security.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.StaticFiles.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.StaticFiles.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Microsoft.Owin.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Nancy.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Nancy.Owin.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Nancy.Owin.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Nancy.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Newtonsoft.Json.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Owin.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\ra.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\ra.exe.config"; DestDir: "{app}"; Flags: ignoreversion
@@ -65,11 +56,8 @@ Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\RunAsWrapper.Core.dll";
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\RunAsWrapper.Core.dll.config"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\RunAsWrapper.Core.pdb"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\System.Net.Http.Formatting.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\System.Net.Http.Formatting.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\System.Web.Http.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\System.Web.Http.Owin.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\System.Web.Http.Owin.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\System.Web.Http.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\Voodoo.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\web\*"; DestDir: "{app}\web"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
@@ -77,3 +65,26 @@ Source: "C:\DropBox\Lib\Projects\ra - Copy\build-outputs\web\*"; DestDir: "{app}
 [Icons]
 Name: "{group}\{cm:ProgramOnTheWeb,{#MyAppName}}"; Filename: "{#MyAppURL}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
+
+
+[Registry]
+Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment";
+    ValueType: expandsz; ValueName: "Path"; ValueData: "{olddata};ExpandConstant({app})";
+    Check: NeedsAddPath(ExpandConstant({app}))
+
+[Code]
+function NeedsAddPath(Param: string): boolean;
+var
+  OrigPath: string;
+begin
+  if not RegQueryStringValue(HKEY_LOCAL_MACHINE,
+    'SYSTEM\CurrentControlSet\Control\Session Manager\Environment',
+    'Path', OrigPath)
+  then begin
+    Result := True;
+    exit;
+  end;
+  // look for the path with leading and trailing semicolon
+  // Pos() returns 0 if not found
+  Result := Pos(';' + Param + ';', ';' + OrigPath + ';') = 0;
+end;
