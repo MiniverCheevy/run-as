@@ -8,20 +8,26 @@
 (function () {
     angular
 	.module('app')
-	.factory('usersFactory', ['$http', function($http) {
+	.factory('usersFactory', ['$http','$log', function($http,$log) {
 
     var urlBase = '/api/users';
     var usersFactory = {};
 
 		
 		usersFactory.put = function (request) {
-        var operation= $http({method: 'PUT', url: urlBase, params: request });
-		return operation.then(function(data, status, headers, config) {
-            return data.data;
-        }, function(error) {
-		    console.log(error);
-            return  { isOk: false, message: error };
-        });
+		        var operation= $http.put(urlBase,request );
+		
+		     return operation.then(function(data, status, headers, config) {
+				return data.data;
+			}, 
+			function(data, status, headers, config) {		
+				$log.error(data);
+				$log.error(status);
+				$log.error(headers);
+				$log.error(config);		    
+				return  { isOk: false, message: data };
+			}
+		);
 		
     };
 
@@ -29,13 +35,19 @@
 
 
 		usersFactory.delete = function (request) {
-        var operation= $http({method: 'DELETE', url: urlBase, params: request });
-		return operation.then(function(data, status, headers, config) {
-            return data.data;
-        }, function(error) {
-		    console.log(error);
-            return  { isOk: false, message: error };
-        });
+				var operation= $http({url: urlBase, method:'delete', params:request });		
+		
+		     return operation.then(function(data, status, headers, config) {
+				return data.data;
+			}, 
+			function(data, status, headers, config) {		
+				$log.error(data);
+				$log.error(status);
+				$log.error(headers);
+				$log.error(config);		    
+				return  { isOk: false, message: data };
+			}
+		);
 		
     };
 
@@ -43,13 +55,19 @@
 
 
 		usersFactory.get = function (request) {
-        var operation= $http({method: 'GET', url: urlBase, params: request });
-		return operation.then(function(data, status, headers, config) {
-            return data.data;
-        }, function(error) {
-		    console.log(error);
-            return  { isOk: false, message: error };
-        });
+				var operation= $http({url: urlBase, method:'get', params:request });		
+		
+		     return operation.then(function(data, status, headers, config) {
+				return data.data;
+			}, 
+			function(data, status, headers, config) {		
+				$log.error(data);
+				$log.error(status);
+				$log.error(headers);
+				$log.error(config);		    
+				return  { isOk: false, message: data };
+			}
+		);
 		
     };
 
@@ -57,13 +75,19 @@
 
 
 		usersFactory.post = function (request) {
-        var operation= $http({method: 'POST', url: urlBase, params: request });
-		return operation.then(function(data, status, headers, config) {
-            return data.data;
-        }, function(error) {
-		    console.log(error);
-            return  { isOk: false, message: error };
-        });
+		        var operation= $http.post(urlBase,request );
+		
+		     return operation.then(function(data, status, headers, config) {
+				return data.data;
+			}, 
+			function(data, status, headers, config) {		
+				$log.error(data);
+				$log.error(status);
+				$log.error(headers);
+				$log.error(config);		    
+				return  { isOk: false, message: data };
+			}
+		);
 		
     };
 

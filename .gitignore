@@ -34,5 +34,7 @@ _ReSharper.*
 *.rar
 *.tar
 *.zip
+*.exe
+
  
 

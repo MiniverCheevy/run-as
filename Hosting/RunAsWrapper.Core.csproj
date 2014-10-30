@@ -100,7 +100,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeGeneration\Resources.cs" />
-    <Content Include="Web\app\config\controller.js" />
+    <Content Include="Web\app\voodoo\voodooConfirm.js" />
+    <Content Include="Web\app\voodoo\voodooDatabase.js" />
+    <Content Include="Web\app\voodoo\voodooDatabase.tmpl.html" />
+    <Content Include="Web\app\voodoo\voodooUtility.js" />
+    <Content Include="Web\WillOneDayBeBundles.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WillOneDayBeBundles.tt</DependentUpon>
+    </Content>
     <None Include="CodeGeneration\CodeWalker.ttinclude" />
     <None Include="CodeGeneration\MultipleOutputHelper.ttinclude" />
     <Compile Include="CodeGeneration\CodeWalker.cs" />
@@ -210,6 +218,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>factories.txt</LastGenOutput>
     </None>
+    <None Include="Web\app\voodoo\voodooServerError" />
     <None Include="Web\fonts\glyphicons-halflings-regular.eot" />
     <None Include="Web\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Web\fonts\glyphicons-halflings-regular.woff" />
@@ -220,6 +229,10 @@
     <None Include="CodeGeneration\ScaffoldGrid.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ScaffoldGrid.html</LastGenOutput>
+    </None>
+    <None Include="Web\WillOneDayBeBundles.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WillOneDayBeBundles.txt</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

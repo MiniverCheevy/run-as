@@ -19,7 +19,7 @@ namespace RunAsWrapper.Core.Controllers
 		
 		[HttpPut]
 		public Voodoo.Messages.Response Put
-			([FromUri] RunAsWrapper.Core.Operations.Users.UserMessage request)
+			([FromBody] RunAsWrapper.Core.Operations.Users.UserMessage request)
 			{
 				var op = new RunAsWrapper.Core.Operations.Users.UserAddCommand(request);
 				var response = op.Execute();
@@ -49,7 +49,7 @@ namespace RunAsWrapper.Core.Controllers
 
 		[HttpPost]
 		public Voodoo.Messages.Response Post
-			([FromUri] RunAsWrapper.Core.Operations.Users.UserMessage request)
+			([FromBody] RunAsWrapper.Core.Operations.Users.UserMessage request)
 			{
 				var op = new RunAsWrapper.Core.Operations.Users.UserUpdateCommand(request);
 				var response = op.Execute();

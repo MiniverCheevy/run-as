@@ -8,4 +8,5 @@
 <#
 var manager = Manager.Create(Host, GenerationEnvironment);
 var walker = new RunAsWrapper.Core.CodeGeneration.CodeWalker();
+var properties = walker.GetProperties("RunAsWrapper.Core.Operations.Users.UserMessage");
 #>
