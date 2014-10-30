@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" ng-app="app" ng-strict-di>
+    <head>
+        <title>Run As Configuraiton</title>
+        <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+        <link rel="stylesheet" href="css/bootstrap.dark.css" />
+        <link rel="stylesheet" href="app/app.css" />
+        <link rel="stylesheet" href="app/voodoo/voodoo.css" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/icon">
+        <link rel="icon" href="/favicon.ico" type="image/icon">
+    </head>
+<a href="https://github.com/MiniverCheevy/run-as" target="_blank" title="source code" class="github">
+            <img src="./css/github.png" ></img>
+        </a>
+    <body>
+        <h2 >RunAs Configuration</h2>
+        <tabset>
+            <tab heading="User Accounts"  ng-controller="users">
+                    <span ng-cloak class="ng-cloak text-danger">{{error}}</span>
+                    <span ng-cloak class="ng-cloak text-info">{{info}}</span>                        
+                    <div ng-if="mode == 'grid'" class="slide-animate" ng-include="gridUrl">
+                    </div>
+                    <form name="editForm">
+                        <div ng-if="mode == 'edit'" class="slide-animate" ng-include="editUrl">
+                        </div>
+                    </form>
+                    <form name="addForm">
+                        <div ng-if="mode == 'add'" class="slide-animate" ng-include="addUrl">
+                        </div>
+                    </form>
+            </tab>
+            <tab heading="Applications"  ng-controller="apps">
+                    <span ng-cloak class="ng-cloak text-danger">{{error}}</span>
+                    <span ng-cloak class="ng-cloak text-info">{{info}}</span>                        
+                    <div ng-if="mode == 'grid'" class="slide-animate" ng-include="gridUrl">
+                    </div>
+                    <form name="editForm">
+                        <div ng-if="mode == 'edit'" class="slide-animate" ng-include="editUrl">
+                        </div>
+                    </form>
+                    <form name="addForm">
+                        <div ng-if="mode == 'add'" class="slide-animate" ng-include="addUrl">
+                        </div>
+                    </form>
+            </tab>       
+        </tabset>
+        
+        <script src="js/angular.min.js"> </script>
+        
+        <script src="js/angular-animate.min.js"> </script>
+        <script src="js/ui-bootstrap-tpls-0.11.0.min.js"> </script>
+        <script src="app/app.js"> </script>        
+       <!-- bundles go here -->
+<script src=".\app\appsFactory.js"> </script>
+<script src=".\app\sessionFactory.js"> </script>
+<script src=".\app\usersFactory.js"> </script>
+<script src=".\app\apps\controller.js"> </script>
+<script src=".\app\users\controller.js"> </script>
+<script src=".\app\voodoo\ngReallyClick.js"> </script>
+<script src=".\app\voodoo\serverError.js"> </script>
+<script src=".\app\voodoo\voodoo.js"> </script>
+<script src=".\app\voodoo\voodooConfirm.js"> </script>
+<script src=".\app\voodoo\voodooDatabase.js"> </script>
+<script src=".\app\voodoo\voodooDatePicker.js"> </script>
+<script src=".\app\voodoo\voodooPager.js"> </script>
+<script src=".\app\voodoo\voodooServerError.js"> </script>
+<script src=".\app\voodoo\voodooSorter.js"> </script>
+<script src=".\app\voodoo\voodooUtility.js"> </script>
+
+    </body>
+</html>
