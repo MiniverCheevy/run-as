@@ -8,8 +8,7 @@ namespace RunAsWrapper
     class Program
     {
         static void Main(string[] args)
-        {
-          
+        {            
             var parser = new CommandLineParser();
             parser.ParseAndExecute(args);          
 

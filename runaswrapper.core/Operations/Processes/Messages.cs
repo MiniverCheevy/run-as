@@ -9,6 +9,6 @@ namespace RunAsWrapper.Core.Operations.Processes
         public const string AtLeastOneArgumentIsRequired =
             "At least one argument is required: ex [UserKey] ApplicationKey [Additional Arguments]";
 
-        public const string ApplicationNotFound = "Application Not Found";
+        public const string ApplicationNotFound = "Application Not Found.  Use ra config to add it.";
     }
 }

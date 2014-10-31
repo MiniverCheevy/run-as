@@ -17,6 +17,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
 using Voodoo;
+using Voodoo.Validation.Infrastructure;
 
 namespace Hosting
 {
@@ -105,7 +106,7 @@ namespace Hosting
             jsonSettings.NullValueHandling = NullValueHandling.Ignore;
             jsonSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             jsonSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-
+            VoodooGlobalConfiguration.RegisterValidator(new DataAnnotationsValidatorWithGenericMessage());
             app.UseWebApi(apiConfig);
         }
 

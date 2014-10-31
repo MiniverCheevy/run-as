@@ -1,8 +1,8 @@
 ﻿(function () {
     "use strict";
     angular.module('app')
-        .controller("apps", ['$scope', '$parse', 'appsFactory',
-            function ($scope, $parse, appsFactory) {
+        .controller("apps", ['$scope', '$parse', 'appsFactory','voodooUtility',
+            function ($scope, $parse, appsFactory, util) {
                 $scope.mode = 'grid';
 
                 $scope.gridUrl = '/app/apps/grid.html';
@@ -54,16 +54,28 @@
                     }
                 };
 
+
                 $scope.editSave = function () {                    
                     appsFactory.post($scope.detail).then($scope.editDone);
                 };
+                
                 $scope.addSave = function () {
-                    appsFactory.put($scope.detail).then($scope.addDone);
+                    debugger;
+                    var helper = util.getFormHelper($scope, $scope.addForm);
+                    appsFactory.put($scope.detail).then(helper.isOk).then(
+                            function (){
+                                $scope.refresh();
+                                $scope.mode = 'grid';
+                                $scope.info = 'App added';
+                            }
+
+                        );
                 };
                 $scope.delete = function () {
                     appsFactory.delete($scope.detail).then($scope.deleteDone);
                 };
                 $scope.addDone = function (response) {
+                    debugger;
                     $scope.done(response, $scope.addForm,'App added');
                 };
                 $scope.editDone = function (response) {

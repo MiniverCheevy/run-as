@@ -93,13 +93,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Voodoo, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Voodoo, Version=1.0.21.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Voodoo.Patterns.1.0.20\lib\net40\Voodoo.dll</HintPath>
+      <HintPath>..\packages\Voodoo.Patterns.1.0.21.0\lib\net40\Voodoo.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeGeneration\Resources.cs" />
+    <Content Include="license.txt" />
     <Content Include="Web\app\voodoo\voodooConfirm.js" />
     <Content Include="Web\app\voodoo\voodooDatabase.js" />
     <Content Include="Web\app\voodoo\voodooDatabase.tmpl.html" />
@@ -237,9 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="config.ra">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="config.ra">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

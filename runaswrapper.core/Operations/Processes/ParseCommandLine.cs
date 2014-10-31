@@ -46,6 +46,9 @@ namespace RunAsWrapper.Core.Operations.Processes
         {
             applicationKeyIndex = 0 + (response.User == null ? 0 : 1);
             var applicationKey = request[applicationKeyIndex].ToLower();
+            if (applicationKey == "config")
+                return new Application() {FullPath = ConfigurationStore.ConfigAppPath, Key="config"};
+
             var application = config.Apps.FirstOrDefault(c => c.Key == applicationKey);
             if (application == null)
                 throw new LogicException(Processes.Messages.ApplicationNotFound);

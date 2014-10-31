@@ -40,9 +40,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Voodoo, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Voodoo, Version=1.0.21.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Voodoo.Patterns.1.0.20\lib\net40\Voodoo.dll</HintPath>
+      <HintPath>..\packages\Voodoo.Patterns.1.0.21.0\lib\net40\Voodoo.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +58,9 @@
       <Project>{66654249-e16f-42ab-9029-b9b57793e9c1}</Project>
       <Name>RunAsWrapper.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -82,9 +82,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Voodoo, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Voodoo, Version=1.0.21.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Voodoo.1.3.0.0\lib\net40\Voodoo.dll</HintPath>
+      <HintPath>..\packages\Voodoo.Patterns.1.0.21.0\lib\net40\Voodoo.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -93,10 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="config.ra">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -122,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Circle_Green.ico" />
+    <Content Include="license.txt" />
     <Content Include="MITLicense.txt" />
   </ItemGroup>
   <ItemGroup>
