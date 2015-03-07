@@ -93,9 +93,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Voodoo, Version=1.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Voodoo, Version=1.0.28.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Voodoo.Patterns.1.0.21.0\lib\net40\Voodoo.dll</HintPath>
+      <HintPath>..\packages\Voodoo.Patterns.1.0.28\lib\net45\Voodoo.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -113,7 +113,6 @@
     <None Include="CodeGeneration\CodeWalker.ttinclude" />
     <None Include="CodeGeneration\MultipleOutputHelper.ttinclude" />
     <Compile Include="CodeGeneration\CodeWalker.cs" />
-    <Compile Include="CodeGeneration\RestAttribute.cs" />
     <Compile Include="Controllers\AppsController.cs">
       <DependentUpon>Controllers.tt</DependentUpon>
     </Compile>

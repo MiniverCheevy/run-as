@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RunAsWrapper.Core.CodeGeneration;
+using Voodoo.Infrastructure;
 using Voodoo.Messages;
 using Voodoo.Operations;
 

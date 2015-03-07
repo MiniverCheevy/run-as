@@ -38,9 +38,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
-    <Reference Include="Voodoo, Version=1.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Voodoo, Version=1.0.28.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Voodoo.Patterns.1.0.21.0\lib\net40\Voodoo.dll</HintPath>
+      <HintPath>..\packages\Voodoo.Patterns.1.0.28\lib\net45\Voodoo.dll</HintPath>
     </Reference>
     <Reference Include="Voodoo.TestData">
       <HintPath>..\packages\Voodoo.TestData.1.0.8\lib\net35\Voodoo.TestData.dll</HintPath>

@@ -4,6 +4,7 @@ using Voodoo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Voodoo.Infrastructure;
 using Voodoo.Messages;
 using Voodoo.Operations;
 

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using Voodoo;
 using Voodoo.Messages;
 using Voodoo.Operations;
 
@@ -24,8 +26,10 @@ namespace RunAsWrapper.Core.Operations.Processes
         {
             //http://social.msdn.microsoft.com/Forums/en-US/winforms/thread/28f84724-af3e-4fa1-bd86-b0d1499eaefa#x_FAQAnswer91
 
+            var path = resolveRelativePath(request.ProgramPath);
+
             startInfo = new ProcessStartInfo();            
-            commandLine = request.ProgramPath;
+            commandLine = path;
             useShellExecute = !executables.Any(c => commandLine.ToLower().EndsWith(c)) || request.RequiresAdmin;
             arguments = request.UserArguments == null
                             ? request.Arguments
@@ -36,6 +40,13 @@ namespace RunAsWrapper.Core.Operations.Processes
             var process = new Process() {StartInfo = startInfo};
             process.Start();
             return response;
+        }
+
+        private string resolveRelativePath(string path)
+        {
+            var thisFolder = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+            var newPath = Path.Combine(thisFolder, path);
+            return Path.GetFullPath(newPath);
         }
 
         private void configureProcess()

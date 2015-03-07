@@ -1,6 +1,18 @@
 <div>
-    <div class="pagination" ng-show="hasRecords">
-        <ul class="pagination">
+    <div class="pagination" ng-show="hasRecords" style="margin: 0px 0px 0px 0px;">
+        <div style="float:left; margin-right: 20px; white-space: nowrap; ">
+            <label style="float:left;margin-right: 4px; margin-top: 6px;">Page Size</label>
+            <select ng-model="gridState.pageSize"
+                    ng-change="update()"
+                    class="form-control" style="width:80px;float:left;">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <div style="float:left; vertical-align:top;">
+            <ul class="pagination" style="margin: 0px 0px 0px 0px;">
             <li ng-class="{'disabled' : isFirstPage }">
                 <a href="" ng-disabled="isFirstPage"
                    ng-click="firstPage()">&laquo;</a>
@@ -25,11 +37,14 @@
                    ng-click="nextBlock()">...</a>
             </li>
             <li ng-class="{'disabled' : isLastPage }">
-                <a href="" ng-disabled="isLastBlock"
+                    <a href="" ng-disabled="isLastPage"
                    ng-click="lastPage()">&raquo</a>
             </li>
         </ul>
-        <p>{{RecordsVerbiage}}</p>
+            <div>
+                {{recordsVerbiage}}
+            </div>
+        </div>
     </div>
     <div id="norecords" ng-show="!hasRecords">
         <h3>No records found</h3>

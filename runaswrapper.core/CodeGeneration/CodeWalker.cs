@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Voodoo;
+using Voodoo.Infrastructure;
 
 namespace RunAsWrapper.Core.CodeGeneration
 {
@@ -52,6 +53,29 @@ namespace RunAsWrapper.Core.CodeGeneration
                     {Verb.Delete, new RestMethod {Attribute = "[HttpDelete]", Name = "Delete", Parameter = "[FromUri]"}},
                     };
             }
+        }
+        public string[] GetCommonPropertiesWithId(Type messageType, Type modelType)
+        {
+            return GetCommonProperites(messageType, modelType);
+        }
+        public string[] GetCommonPropertiesWithOutId(Type messageType, Type modelType)
+        {
+            return GetCommonProperites(messageType, modelType)
+                .Where(c => c != "Id")
+                .ToArray();
+        }
+        private string[] GetCommonProperites(Type messageType, Type modelType)
+        {
+            var messageProperties = messageType.GetProperties()
+                .Where(c => c.PropertyType.IsScalar())
+                .Select(c => c.Name)
+                .ToArray();
+            var modelProperties = modelType.GetProperties()
+                .Where(c => c.PropertyType.IsScalar())
+                .Select(c => c.Name)
+                .ToArray();
+            return messageProperties.Where(c => modelProperties.Contains(c))
+                .ToArray();
         }
         public string[] GetScriptFiles(string pathToWeb)
         {

@@ -9,10 +9,11 @@ namespace RunAsWrapper.Core.Helpers
     {
         private string commandLineArguments = string.Empty;
         private List<string> userArguments = new List<string>();
+        private CommandLineResponse response;
 
         public void ParseAndExecute(string[] args)
         {
-            var response = new ParseCommandLine(args).Execute();
+            response = new ParseCommandLine(args).Execute();
             if (!response.IsOk)
             {
                 Console.WriteLine(response.Message);

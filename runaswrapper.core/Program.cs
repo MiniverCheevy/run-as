@@ -29,6 +29,9 @@ namespace Hosting
         {
             try
             {
+                if (ConfigurationManager.AppSettings["debug"].To<bool>())
+                    System.Diagnostics.Debugger.Launch();
+
                 var options = new Microsoft.Owin.Hosting.StartOptions();
                 var port = ConfigurationManager.AppSettings["port"] ?? "9999";
                 url = string.Format(url, port);
