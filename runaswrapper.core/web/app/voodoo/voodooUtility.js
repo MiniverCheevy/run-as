@@ -28,7 +28,6 @@
                 return response.isOk;
             };
             this.getFormHelper = function ($scope, form) {
-                debugger;
                 var helper = {};
                 helper.form = form;
                 helper.scope = $scope;

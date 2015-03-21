@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -67,6 +68,33 @@ namespace Hosting
 
     public class Startup
     {
+        private string findTheWebFolder()
+        {
+            var rootDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
+            const string webDirectory = "web";           
+            var directory = Path.Combine(rootDirectory, webDirectory);
+            var count = 0;
+
+            while (!Directory.Exists(directory))
+            {
+               
+                if (directory.EndsWith(@"ra\web"))
+                {
+                    directory = Path.Combine(rootDirectory, @"RunAsWrapper.Core\web");
+                }
+                else
+                {
+                    
+                    rootDirectory = Directory.GetParent(rootDirectory).ToString();
+                    if (count > 5)
+                        throw new Exception("Cannot find web folder");
+                    directory = Path.Combine(rootDirectory,  webDirectory);
+                }               
+                count++;                
+            }
+            return directory;
+        }
+
         public void Configuration(IAppBuilder app)
         {
            
@@ -75,7 +103,7 @@ namespace Hosting
             //app.MapSignalR(config);
             app.UseFileServer(new FileServerOptions()
             {
-                FileSystem = new PhysicalFileSystem("Web"),
+                FileSystem = new PhysicalFileSystem(findTheWebFolder()),
                 EnableDefaultFiles = true,
                 EnableDirectoryBrowsing = true
             });

@@ -1,43 +1,64 @@
-﻿<div class="form-horizontal">
-    <div class="col-md-11">
-        
+﻿
+<div class="row">
+    <div class="pull-left">
+        <v-pager grid-state="state"
+                 onchange="refresh()"></v-pager>
+
     </div>
-    <div class="col-md-1">    
+    <div class="pull-right">
         <button type="button" class="btn btn-primary active" ng-click="add()">
             Add New
         </button>
     </div>
+    <div class="pull-right col-md-4">
+        <div class="input-group">
+            <input type="text"
+                   autofocus="autofocus"
+                   ng-model="state.searchText" class="form-control" placeholder="Search"/>
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary active">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"
+                          title="Search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+   
 </div>
 <div class="gridShell">
     <table class="grid table table-bordered table-striped">
         <thead>
-            <tr>
-                <th class="key-column">
-                    <v-sorter
-                        text="Key" member="key" 
-                        grid-state="state"
-                        onsort="refresh()"></v-sorter>
-                </th>
-                <th class="path-column">
-                    <v-sorter
-                        text="Path" member="fullPath" 
-                        grid-state="state"
-                        onsort="refresh()"></v-sorter>
-                </th>
-        <th class="key-column"></th>
+
+        <tr >
+            <th class="key-column"></th>
+            <th class="key-column">
+                <v-sorter
+                    text="Key" member="key"
+                    grid-state="state"
+                    onsort="refresh()"></v-sorter>
+            </th>
+            <th class="path-column">
+                <v-sorter
+                    text="Path" member="fullPath"
+                    grid-state="state"
+                    onsort="refresh()"></v-sorter>
+            </th>
+
         </tr>
         </thead>
         <tr data-ng-repeat="item in data">
+            <td>
+                <button ng-click="edit(item.key)" title="Edit"
+                        class="btn btn-xs btn-primary">
+                    <span class="glyphicon glyphicon-align-left glyphicon-edit"
+                          aria-hidden="true"
+                          title="Edit"></span>
+                </button>
+            </td>
             <td>{{item.key}}</td>
             <td>{{item.fullPath}}</td>
 
-            <td>
-                <button ng-click="edit(item.key)" 
-                class="btn btn-xs btn-primary">Edit</button>
-            </td>
-    </tr>
+
+        </tr>
     </table>
 </div>
-<v-pager
-    grid-state="state"
-    onchange="refresh()"></v-pager>

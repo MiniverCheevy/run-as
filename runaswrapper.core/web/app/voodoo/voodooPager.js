@@ -78,6 +78,7 @@
             };
             $scope.update = function ()
             {
+                if ($scope.callback)
                 $scope.callback(scope, {});
             }
             $scope.page = function(number) {

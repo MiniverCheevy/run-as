@@ -26,8 +26,10 @@ namespace RunAsWrapper.Core.Operations.Apps
 
             if (!string.IsNullOrWhiteSpace(request.Key))
                 query = query.Where(c => c.Key == request.Key);
+            if (!string.IsNullOrWhiteSpace(request.SearchText))
+                query = query.Where(c => c.Key.Contains(request.SearchText) || c.FullPath.Contains(request.SearchText));
 
-            response = query.PagedResult<Application, AppMessage>(request, c=>Mapper.Map(c));
+            response = query.ToPagedResponse(request, c=>Mapper.Map(c));
                 
             return response;
         }

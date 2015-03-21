@@ -3,14 +3,15 @@
 <script src=".\app\sessionFactory.js"> </script>
 <script src=".\app\usersFactory.js"> </script>
 <script src=".\app\apps\controller.js"> </script>
-<script src=".\app\config\controller.js"> </script>
 <script src=".\app\users\controller.js"> </script>
 <script src=".\app\voodoo\ngReallyClick.js"> </script>
 <script src=".\app\voodoo\serverError.js"> </script>
 <script src=".\app\voodoo\voodoo.js"> </script>
 <script src=".\app\voodoo\voodooConfirm.js"> </script>
 <script src=".\app\voodoo\voodooDatabase.js"> </script>
+<script src=".\app\voodoo\voodooDate.js"> </script>
 <script src=".\app\voodoo\voodooDatePicker.js"> </script>
+<script src=".\app\voodoo\voodooLessThan.js"> </script>
 <script src=".\app\voodoo\voodooPager.js"> </script>
 <script src=".\app\voodoo\voodooServerError.js"> </script>
 <script src=".\app\voodoo\voodooSorter.js"> </script>

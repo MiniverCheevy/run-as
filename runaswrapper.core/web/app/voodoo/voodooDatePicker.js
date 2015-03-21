@@ -20,7 +20,7 @@
                     placeholder: '@'                
                 },
                 controller: 'voodooDatePickerController',
-                templateUrl: '/app/voodoo/voodooDatePicker.tmpl.html',
+                templateUrl: 'app/voodoo/voodooDatePicker.tmpl.html',
 
                 link: function(scope, element, attrs, voodooDatePickerController) {
 
