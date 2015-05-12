@@ -1,0 +1,54 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ output extension=".txt" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+<#@ include file="$(ProjectDir)\CodeGeneration\CodeWalker.ttinclude" #>
+<#
+var modelType = typeof(PCE.Common.EntityModels.TimberlineEmployee);
+var messageType = typeof(PCE.Common.ViewModels.TimberlineNative.EmployeeDetailMessage);
+var commonPropertiesWithId = walker.GetCommonPropertiesWithId(messageType, modelType);
+var commonPropertiesWithOutId = walker.GetCommonPropertiesWithOutId(messageType, modelType);
+#>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using PCE.Common.EntityModels;
+using <#=modelType.Namespace#>;
+using <#=messageType.Namespace#>;
+
+namespace PCE.Business.Operations.Something
+{
+	public static class Mapper
+    {
+        public static <#=messageType.Name#> Map(<#=modelType.Name#> model)
+        {
+            var message = new <#=messageType.Name#>();
+			<#
+				foreach(var property in commonPropertiesWithId)
+				{
+				#>
+				message.<#=property#> = model.<#=property#>;
+				<#
+				}
+			#>
+			return message;
+        }
+
+		public static void Map(<#=messageType.Name#> message,<#=modelType.Name#> model)
+        {
+			<#
+				foreach(var property in commonPropertiesWithOutId)
+				{
+				#>
+				model.<#=property#> = message.<#=property#>;
+				<#
+				}
+			#>
+        }
+    }
+}
+

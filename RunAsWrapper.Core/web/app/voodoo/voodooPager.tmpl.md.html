@@ -1,0 +1,81 @@
+﻿<div >
+    <div ng-show="hasRecords" style="margin: 0px 0px 0px 0px;">
+        <div layout="row">
+            <div layout="column">
+                <label style="float: left; margin-right: 4px; margin-top: 6px;">Page Size</label>
+                <select ng-model="gridState.pageSize"
+                        ng-click="update()"
+                        class="form-control" style="width: 80px; float: left;">
+                    <option value="1">1</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+
+            </div>
+             <div layout="column">
+            <md-whiteframe class="md-whiteframe-z5" layout layout-align="center center">
+
+                <md-button href=""  class="md-raised" ng-class="{'disabled' : isFirstPage }"
+                           ng-disabled="isFirstPage"
+                           ng-click="firstPage()">
+                    &laquo;
+                </md-button>
+                <md-button href=""  class="md-raised" ng-class="{'disabled' : isFirstBlock }"
+                           ng-disabled="isFirstBlock"
+                           ng-click="prevBlock()">
+                    ...
+                </md-button>
+                <md-button href="" class="md-raised" ng-class="{'disabled' : isFirstPage }"
+                           ng-disabled="isFirstPage"
+                           ng-click="prevPage()">
+                    &lt
+                </md-button>
+                <button class="md-raised md-button ng-scope md-default-theme"
+                        ng-repeat="block in pageBlock"
+                        ng-class="{'active md-primary md-hue-1' : page.isActive  }"
+                        ng-disabled="page.isActive" ng-click="page(block.page)">
+                    {{block.page}}
+                    
+                </button>
+                <!--<md-button href="" ng-cloak class="md-raised" 
+                           ng-repeat="block in pageBlock" ng-class="{'active md-primary md-hue-1' : block.isActive  }"
+                           ng-disabled="block.isActive"
+                           ng-click="page(block.page)">
+                    {{block.page}}
+                </md-button>-->
+                <md-button href=""  class="md-raised" ng-class="{'disabled' : isLastPage }"
+                           ng-disabled="isLastPage"
+                           ng-click="nextPage()">
+                    &gt
+                </md-button>
+                <md-button href=""  class="md-raised" ng-class="{'disabled' : isLastBlock }"
+                           ng-disabled="isLastBlock"
+                           ng-click="nextBlock()">
+                    ...
+                </md-button>
+                <md-button href=""  class="md-raised" ng-class="{'disabled' : isLastPage }"
+                           ng-disabled="isLastPage"
+                           ng-click="lastPage()">
+                    &raquo
+                </md-button>
+
+            </md-whiteframe>
+        </div>
+        </div>
+
+    </div>
+    <div id="norecords" ng-show="!hasRecords">
+        <h3>No records found</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="column"></div>
+    <div class="column">
+        <div>
+            {{recordsVerbiage}}
+        </div>
+    </div>
+</div>
+

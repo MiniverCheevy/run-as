@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <title>Run As Configuraiton</title>
+    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+</head>
+<body>
+    <div ng-app="app">
+        <div ng-controller="pagerCtrl as pager">
+            <form name="gridForm" ng-submit="refresh()">
+                <ul class="pagination">
+                    <li>
+                        <button ng-cloak class="btn btn-primary"
+                                ng-repeat="page in pager.pages" ng-class="{'active md-primary md-hue-1' : page.isActive  }"
+                                ng-disabled="page.isActive"
+                                ng-click="pager.page(page.number)">
+                            {{page.number}}
+                        </button>
+                    </li>
+                </ul>
+                <h3>Users Page {{pager.pageNumber}}</h3>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                    <tr ng-repeat="user in pager.users">
+                        <td>{{user.name}}</td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script src="bower_components/angular/angular.min.js"> </script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"> </script>
+    
+    <script type="text/javascript">
+        var app = angular.module('app', ['ui.bootstrap']);
+            
+        app.controller('pagerCtrl', [
+            '$scope', 'userService', function ($scope, userService) {
+                var self = this;
+
+                self.pageNumber = 1;
+                self.page = function (number) {
+                    self.pageNumber = number;
+                    self.refresh();
+                }
+                self.refresh = function () {
+                    userService.loadAllUsers().then(function (users) {
+                        self.users = [].concat(users.data);
+                        self.paging = users.paging;
+                        self.buildPager();
+                    });
+                }
+                self.buildPager = function () {
+                    var pages = [];
+                    for (var i = 1; i < self.paging.numberOfPages + 1; i++) {
+                        pages.push({ number: i, isActive: self.pageNumber === i });
+                    }
+                    self.pages = [].concat(pages);
+                }
+                self.refresh();
+            }]);
+
+        app.service('userService', ['$q', UserService]);
+
+        function UserService($q) {
+            var users = {
+                paging: { numberOfPages: 10 },
+                data: [
+                    { name: 'Lia Lugo' },
+                    { name: 'George Duke' },
+                    { name: 'Gener Delosreyes' },
+                    { name: 'Lawrence Ray' },
+                    { name: 'Ernesto Urbina' },
+                    { name: 'Gani Ferrer' }
+                ]
+            };
+            return {
+                loadAllUsers: function () {
+                    // Simulate async nature of real remote calls
+                    return $q.when(users);
+                }
+            };
+        }
+    </script>
+</body>
+</html>

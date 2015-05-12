@@ -1,0 +1,251 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"root",
+				"$rootScope	AngularJS"
+			],
+			[
+				"md-car",
+				"md-card-content"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/User/msbuild.sublime-build",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 183.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pretty",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal	",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 708.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Z/Dropbox/Lib/Projects/ra",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app/apps",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app/voodoo"
+	],
+	"file_history":
+	[
+		"/C/Users/Shawn/Downloads/phantomjs-2.0.0-windows/phantomjs-2.0.0-windows/bin/test.js",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/index.html",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/src/projects/projectsService.js",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/static.html",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app/app.css",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/assets/app.css",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app/voodoo/voodooPager.js",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app/voodoo/voodooPager.tmpl.md.html",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app/voodoo/table-shim.js",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app/voodoo/table-shim.css",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app/voodoo/voodoo.md.js",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app/app.md.js",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/Index.md.html",
+		"/Z/Dropbox/Lib/Projects/ra/RunAsWrapper.Core/web/app/apps/grid.html",
+		"/C/Users/Shawn/Downloads/material-start-master/material-start-master/app/src/users/UserService.js",
+		"/C/Users/Shawn/Downloads/material-start-master/material-start-master/app/src/users/UserController.js",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/assets/chocolateyicon.gif",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/assets/1app.css",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/src/users/Users.js",
+		"/Z/hound/NSPR/NSRP/NSRP.Web/Views/User/Index.cshtml",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/src/projects/projects.js",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/src/projects/projectsController.js",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/src/projects/details.html",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/azureSoft.sublime-project",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/src/users/UserService.js",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/src/users/view/contactSheet.html",
+		"/Z/Dropbox/Lib/Projects/azuresoft.net/app/src/users/UserController.js",
+		"/Z/Dropbox/Lib/Projects/voodoo/Voodoo/IoNic.cs",
+		"/Z/Dropbox/Lib/Projects/voodoo/Voodoo/Constants.cs",
+		"/Z/Dropbox/Lib/Projects/voodoo/Voodoo/CollectionExtensions.cs",
+		"/Z/Dropbox/Lib/Projects/voodoo/Voodoo/Validation/CollectionMustHaveAtLeastOneItemAttribute.cs",
+		"/Z/Dropbox/Lib/Projects/voodoo/Voodoo/Voodoo.EntityFramework/UnitTest1.cs",
+		"/Z/Dropbox/Lib/Projects/voodoo/Voodoo/Validation/SafeValidationAttribute.cs",
+		"/C/Users/Shawn/AppData/Roaming/Sublime Text 3/Packages/User/msbuild.sublime-build",
+		"/Z/Dropbox/Lib/Projects/voodoo/Voodoo/voodoo.sublime-project"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"projectsImage",
+			"ul",
+			"project",
+			"user",
+			"h1",
+			"starterApp",
+			"}"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"icoImage",
+			"ctl",
+			"project",
+			"app"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 281.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "ra.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 394.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
