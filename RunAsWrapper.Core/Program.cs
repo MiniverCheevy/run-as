@@ -78,9 +78,10 @@ namespace Hosting
             while (!Directory.Exists(directory))
             {
                
-                if (directory.EndsWith(@"ra\web"))
+                if (directory.EndsWith(@"web"))
                 {
-                    directory = Path.Combine(rootDirectory, @"RunAsWrapper.Core\web");
+                    break;
+                    //directory = Path.Combine(rootDirectory, @"RunAsWrapper.Core\web");
                 }
                 else
                 {
