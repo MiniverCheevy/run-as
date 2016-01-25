@@ -39,8 +39,8 @@ namespace Hosting
                 options.Urls.Add(url);
                 options.ServerFactory = "Microsoft.Owin.Host.HttpListener";
                 options.AppStartup = "Hosting.Startup";
-                
 
+                VoodooGlobalConfiguration.RegisterValidator(new Voodoo.Validation.Infrastructure.DataAnnotationsValidatorWithFirstErrorAsMessage());
                 using (WebApp.Start<Startup>(options))
                 {
                     IoNic.ShellExecute(string.Format("{0}/index.html", url));
