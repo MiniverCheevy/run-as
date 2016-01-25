@@ -35,12 +35,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
-    <Reference Include="Voodoo, Version=1.0.28.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Voodoo.Patterns.1.0.28\lib\net45\Voodoo.dll</HintPath>
+    <Reference Include="System.Xml" />
+    <Reference Include="Voodoo.Patterns, Version=2.1.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Voodoo.Patterns.2.1.12\lib\net45\Voodoo.Patterns.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Voodoo.TestData">
       <HintPath>..\packages\Voodoo.TestData.1.0.8\lib\net35\Voodoo.TestData.dll</HintPath>
@@ -87,6 +91,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="license.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\RunAsWrapper.Configuration\RunAsWrapper.Configuration.csproj">
       <Project>{1c1823e4-468b-4104-85ff-4aac32331add}</Project>
       <Name>RunAsWrapper.Configuration</Name>
@@ -99,9 +106,6 @@
       <Project>{718f0f4f-1289-4e92-b2c1-8185159c9d5a}</Project>
       <Name>RunAsWrapper</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="license.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -22,7 +22,7 @@ namespace RunAsWrapper.Core.Operations.Users
         {
             response= ConfigurationStore.Current.Users
                   .AsQueryable()
-                  .PagedResult(request, c=>Mapper.Map(c));                  
+                  .ToPagedResponse(request, c=>Mapper.Map(c));                  
                 
             return response;
         }
